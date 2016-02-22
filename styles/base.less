@@ -1,9 +1,72 @@
+@import "pesticide";
+
 /* ==========================================================================
    Base styles
    ========================================================================== */
 
 html, body {
     background-color: #f9f9f9;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  padding: 0 !important;
+}
+
+/* ==========================================================================
+   Less Mixins
+   ========================================================================== */
+.flex-center-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Element styles
+   ========================================================================== */
+
+ @content-height: 100vh;
+#header {
+  position: absolute;
+  right: 0;
+  margin: 1em;
+}
+
+#profile {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: @content-height;
+
+  #pic {
+    overflow: hidden;
+    border-radius: 1000px;
+  }
+}
+
+#content {
+  .flex-center-all;
+  height: @content-height;
+}
+
+@block-dim: 100px;
+@block-margin: 8px;
+@box-width: 4*@block-dim + 8*@block-margin;
+#content-box {
+  .flex-center-all;
+  width: @box-width;
+  flex-wrap: wrap;
+  .content-block {
+    display: inline-flex;
+    height: @block-dim;
+    width: @block-dim;
+    margin: @block-margin;
+  }
 }
 
 /* ==========================================================================

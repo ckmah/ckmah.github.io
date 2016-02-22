@@ -110,7 +110,7 @@ gulp.task('pages', function () {
 
 // CSS style sheets
 gulp.task('styles', function () {
-  src.styles = 'styles/**/*.{css,less}';
+  src.styles = ['styles/**/*.{css,less}', '!styles/pesticide.less'];
   return gulp.src('styles/bootstrap.less')
     .pipe($.if(!RELEASE, $.sourcemaps.init()))
     .pipe($.less())
@@ -166,6 +166,8 @@ gulp.task('serve', ['build'], function () {
     }
   });
 
+  src.mixins = 'mixins/**/*.jade';
+  gulp.watch(src.mixins);
   gulp.watch(src.assets, ['assets']);
   gulp.watch(src.images, ['images']);
   gulp.watch(src.pages, ['pages']);
@@ -178,17 +180,9 @@ gulp.task('serve', ['build'], function () {
 });
 
 // Publish to GitHub Pages
-gulp.task('deploy', function () {
-  // To deploy with Travis CI:
-  //   1. Generate OAuth token on GitHub > Settings > Application page
-  //   2. Encrypt and save that token into the `.travis.yml` file by running:
-  //      `travis encrypt GITHUB_TOKEN="<your-oauth-token>" --add`
+gulp.task('deploy', function() {
   return gulp.src('build/**/*')
-    .pipe($.if('**/robots.txt', !argv.production ? $.replace('Disallow:', 'Disallow: /') : $.util.noop()))
-    .pipe($.ghPages({
-      remoteUrl: 'https://' + process.env.GITHUB_TOKEN + '@github.com/{username}/{projectname}.git',
-      branch: 'gh-pages'
-    }));
+    .pipe($.ghPages());
 });
 
 // Run PageSpeed Insights

@@ -1,0 +1,12 @@
+//- assumes data loaded from data/content.json
+
+- var projects = 'Projects'
+- var exp = 'Experience'
+- var lead = 'Leadership'
+- blockData = {'One': projects, 'Two': exp, 'Three': lead, 'Four': projects, 'Five': exp, 'Six': lead, 'Seven': projects, 'Eight': exp}
+- console.info(content)
+
+div#content-box
+  div
+  each category, name in blockData
+    +content-block(name, category)

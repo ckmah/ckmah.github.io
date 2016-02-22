@@ -1,5 +1,7 @@
-mixin content-block(name)
+mixin content-block(name, category)
   div.content-block
-    h3= name
-    if block
-      block
+    div.block-overlay
+      h3#name= name
+      h5#category= category
+    div.block-expand-header
+    div.block-expand-info

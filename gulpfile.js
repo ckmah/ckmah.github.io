@@ -23,6 +23,7 @@
 // See: https://github.com/gulpjs/gulp/blob/master/docs/API.md
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var fs = require('fs');
 var del = require('del');
 var merge = require('merge-stream');
 var runSequence = require('run-sequence');
@@ -30,7 +31,7 @@ var argv = require('minimist')(process.argv.slice(2));
 
 // Settings
 var RELEASE = !!argv.release;             // Minimize and optimize during a build?
-var GOOGLE_ANALYTICS_ID = 'UA-XXXXX-X';   // https://www.google.com/analytics/web/
+var GOOGLE_ANALYTICS_ID = 'UA-74127848-1';   // https://www.google.com/analytics/web/
 var AUTOPREFIXER_BROWSERS = [             // https://github.com/ai/autoprefixer
   'ie >= 10',
   'ie_mob >= 10',
@@ -89,15 +90,17 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('build/fonts'));
 });
 
-// HTML pages
+// HTML pages + content data
 gulp.task('pages', function () {
   src.pages = ['pages/**/*', 'layouts/**/*', 'partials/**/*'];
+  src.data = 'data/**/*';
   return gulp.src(src.pages[0])
     .pipe($.if(/\.jade$/, $.jade({
       pretty: !RELEASE,
       locals: {
         pkgs: pkgs,
-        googleAnalyticsID: GOOGLE_ANALYTICS_ID
+        googleAnalyticsID: GOOGLE_ANALYTICS_ID,
+        content: JSON.parse(fs.readFileSync('./data/content.json'))
       }
     })))
     .pipe($.if(RELEASE, $.htmlmin({
@@ -166,11 +169,12 @@ gulp.task('serve', ['build'], function () {
     }
   });
 
-  src.mixins = 'mixins/**/*.jade';
-  gulp.watch(src.mixins);
+  src.mixins = 'mixins/**/*';
   gulp.watch(src.assets, ['assets']);
   gulp.watch(src.images, ['images']);
   gulp.watch(src.pages, ['pages']);
+  gulp.watch(src.mixins, ['pages']);
+  gulp.watch(src.data, ['pages']);
   gulp.watch(src.styles, ['styles']);
   gulp.watch(src.scripts, ['scripts']);
   gulp.watch('./build/**/*.*', function(file) {

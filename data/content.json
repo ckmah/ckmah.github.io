@@ -1,4 +1,12 @@
 {
-  "myVar1": "I AM A STRING!",
-  "myVar2": "BUT NOT _THE_ STRING!"
+  "elements": [{
+    "title": "DangoReader",
+    "category": "PROJECTS",
+    "tags": ["ANDROID, JAVA"]
+
+  }, {
+    "title": "VP - UBIC",
+    "category": "LEADERSHIP",
+    "tags": ["BIOINFORMATICS"]
+  }]
 }

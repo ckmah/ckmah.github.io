@@ -20,6 +20,10 @@
 (function () {
   'use strict';
 
-  
+  $('.content-block').click(function() {
+    var $block = $(this);
+    $block.parent('.content-block').removeClass('expanded');
+    $block.addClass('expanded');
+  });
 
 })();

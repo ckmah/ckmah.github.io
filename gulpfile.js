@@ -30,9 +30,9 @@ var runSequence = require('run-sequence');
 var argv = require('minimist')(process.argv.slice(2));
 
 // Settings
-var RELEASE = !!argv.release;             // Minimize and optimize during a build?
-var GOOGLE_ANALYTICS_ID = 'UA-74127848-1';   // https://www.google.com/analytics/web/
-var AUTOPREFIXER_BROWSERS = [             // https://github.com/ai/autoprefixer
+var RELEASE = !!argv.release; // Minimize and optimize during a build?
+var GOOGLE_ANALYTICS_ID = 'UA-74127848-1'; // https://www.google.com/analytics/web/
+var AUTOPREFIXER_BROWSERS = [ // https://github.com/ai/autoprefixer
   'ie >= 10',
   'ie_mob >= 10',
   'ff >= 30',
@@ -52,29 +52,31 @@ var pkgs = require('./package.json').dependencies;
 gulp.task('default', ['serve']);
 
 // Clean up
-gulp.task('clean', del.bind(null, ['build/*', '!build/.git'], {dot: true}));
+gulp.task('clean', del.bind(null, ['build/*', '!build/.git'], {
+  dot: true
+}));
 
 // 3rd party libraries
-gulp.task('vendor', function () {
+gulp.task('vendor', function() {
   return merge(
     gulp.src('node_modules/jquery/dist/*.*')
-      .pipe(gulp.dest('build/vendor/jquery-' + pkgs.jquery)),
+    .pipe(gulp.dest('build/vendor/jquery-' + pkgs.jquery)),
     gulp.src('node_modules/modernizr/dist/modernizr-build.min.js')
-      .pipe($.rename('modernizr.min.js'))
-      .pipe($.uglify())
-      .pipe(gulp.dest('build/vendor/modernizr-' + pkgs.modernizr))
+    .pipe($.rename('modernizr.min.js'))
+    .pipe($.uglify())
+    .pipe(gulp.dest('build/vendor/modernizr-' + pkgs.modernizr))
   );
 });
 
 // Static files
-gulp.task('assets', function () {
+gulp.task('assets', function() {
   src.assets = 'assets/**';
   return gulp.src(src.assets)
     .pipe(gulp.dest('build'));
 });
 
 // Images
-gulp.task('images', function () {
+gulp.task('images', function() {
   src.images = 'images/**';
   return gulp.src(src.images)
     .pipe($.cache($.imagemin({
@@ -85,13 +87,13 @@ gulp.task('images', function () {
 });
 
 // Fonts
-gulp.task('fonts', function () {
+gulp.task('fonts', function() {
   return gulp.src('node_modules/bootstrap/fonts/**')
     .pipe(gulp.dest('build/fonts'));
 });
 
 // HTML pages + content data
-gulp.task('pages', function () {
+gulp.task('pages', function() {
   src.pages = ['pages/**/*', 'layouts/**/*', 'partials/**/*'];
   src.data = 'data/**/*';
   return gulp.src(src.pages[0])
@@ -106,13 +108,14 @@ gulp.task('pages', function () {
     .pipe($.if(RELEASE, $.htmlmin({
       removeComments: true,
       collapseWhitespace: true,
-      minifyJS: true, minifyCSS: true
+      minifyJS: true,
+      minifyCSS: true
     })))
     .pipe(gulp.dest('build'));
 });
 
 // CSS style sheets
-gulp.task('styles', function () {
+gulp.task('styles', function() {
   src.styles = ['styles/**/*.{css,less}', '!styles/pesticide.less'];
   return gulp.src('styles/bootstrap.less')
     .pipe($.if(!RELEASE, $.sourcemaps.init()))
@@ -126,7 +129,7 @@ gulp.task('styles', function () {
 });
 
 // JavaScript
-gulp.task('scripts', function () {
+gulp.task('scripts', function() {
   src.scripts = ['node_modules/particles.js/particles.js', 'scripts/plugins.js', 'scripts/main.js'];
   return gulp.src(src.scripts)
     .pipe($.if(!RELEASE, $.sourcemaps.init()))
@@ -137,12 +140,12 @@ gulp.task('scripts', function () {
 });
 
 // Build
-gulp.task('build', ['clean'], function (cb) {
+gulp.task('build', ['clean'], function(cb) {
   runSequence(['vendor', 'assets', 'images', 'fonts', 'pages', 'styles', 'scripts'], cb);
 });
 
 // Run BrowserSync
-gulp.task('serve', ['build'], function () {
+gulp.task('serve', ['build'], function() {
 
   var path = require('path');
   var url = require('url');
@@ -158,7 +161,7 @@ gulp.task('serve', ['build'], function () {
     // https: true,
     server: {
       baseDir: './build',
-      middleware: function (req, res, cb) {
+      middleware: function(req, res, cb) {
         var uri = url.parse(req.url);
         if (uri.pathname.length > 1 &&
           path.extname(uri.pathname) === '' &&
@@ -187,18 +190,18 @@ gulp.task('serve', ['build'], function () {
 // Publish to GitHub Pages
 gulp.task('deploy', function() {
   return gulp.src('build/**/*')
-    .pipe($.ghPages(
+    .pipe($.ghPages({
       branch: 'master'
-    ));
+    }));
 });
 
 // Run PageSpeed Insights
-gulp.task('pagespeed', function (cb) {
+gulp.task('pagespeed', function(cb) {
   // Update the below URL to the public URL of your site
   require('psi').output('example.com', {
     strategy: 'mobile'
-    // By default we use the PageSpeed Insights free (no API key) tier.
-    // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
-    // key: 'YOUR_API_KEY'
+      // By default we use the PageSpeed Insights free (no API key) tier.
+      // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
+      // key: 'YOUR_API_KEY'
   }, cb);
 });

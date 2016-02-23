@@ -3,41 +3,50 @@
     "title": "DangoReader",
     "category": "projects",
     "tags": ["android", "java"],
-    "description": "Android app for reading manga."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "url(http://placehold.it/300?text=PLACEHOLDER)"
   }, {
     "title": "Molecular Sequence Analysis",
     "category": "projects",
     "tags": ["bioinformatics", "python"],
-    "description": "Pevzner's class."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "url(http://placehold.it/300?text=PLACEHOLDER)"
   }, {
     "title": "Peroxisome Gene Regulation Analysis",
     "category": "experience",
     "tags": ["research"],
-    "description": ""
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "url(http://placehold.it/300?text=PLACEHOLDER)"
   }, {
     "title": "Speech & Brain Machine Interfaces",
     "category": "experience",
     "tags": ["research", "scripting", "matlab", "python"],
-    "description": ""
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "url(http://placehold.it/300?text=PLACEHOLDER)"
   }, {
     "title": "Project Team Lead - BMES",
     "category": "leadership",
     "tags": ["event planning", "project management"],
-    "description": "I created amazing engineering research opportunities for undergraduates."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "url(http://placehold.it/300?text=PLACEHOLDER)"
   }, {
     "title": "Vice President - UBIC",
     "category": "leadership",
     "tags": ["bioinformatics", ""],
-    "description": "Awesome undergraduate Bioinformatics resources."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "url(http://placehold.it/300?text=PLACEHOLDER)"
   }, {
     "title": "Webmaster - BMES",
     "category": "leadership",
     "tags": ["web development"],
-    "description": "Made website for Biomedical Engineering Society."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "url(http://placehold.it/300?text=PLACEHOLDER)"
   }, {
     "title": "National Academy of Engineering - Video Contest",
     "category": "leadership",
     "tags": [""],
-    "description": "Won the People's Choice Award for $5000."
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "image": "url(http://placehold.it/300?text=PLACEHOLDER)"
+
   }]
 }

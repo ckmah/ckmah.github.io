@@ -32,8 +32,10 @@ var $CARD = $('#info-card');
 
     // bind data
     $CARD.find('#title').text($block.data('title'));
+    $CARD.find('#info-header').css('background-image', 'url(http://placehold.it/300?text=PLACEHOLDER)');
     $CARD.find('#category').text($block.data('category'));
 
+    // Put each tag in its own div
     $CARD.find('#tags').text('');
     var tags = String($block.data('tags')).split(',');
     for (var str of tags) {
@@ -41,12 +43,13 @@ var $CARD = $('#info-card');
       div.innerHTML = str;
       $CARD.find('#tags').append(div);
     }
+
     $CARD.find('#description').text($block.data('description'));
 
     $CARD.fadeIn(300);
   });
 
-  $('#card-close').click(function() {
+  $('#info-close').click(function() {
     $('#info-card').fadeOut(300);
   });
 

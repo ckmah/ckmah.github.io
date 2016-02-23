@@ -7,8 +7,14 @@ body {
   background-color: #f9f9f9;
   padding: 0;
 }
-a:hover {
-  text-decoration: none;
+a {
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+h3 {
+  font-size: 18px;
 }
 .container {
   .no-padding;
@@ -34,27 +40,48 @@ a:hover {
 .no-padding {
   padding: 0 !important;
 }
-.card-z1 {
+.card {
+  overflow: hidden;
   border-radius: 2px;
+}
+.card-z1 {
+  .card;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .card-z2 {
-  border-radius: 2px;
+  .card;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .card-z3 {
-  border-radius: 2px;
+  .card;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
-
 .card-z4 {
-  border-radius: 2px;
+  .card;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-
 .card-z5 {
-  border-radius: 2px;
+  .card;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.card-raised {
+  .card-z1;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    .card-z2;
+  }
+}
+
+.button-raised {
+  .card-raised;
+  padding: 4px 12px;
+  background: #AAA;
+  border-radius: 2px;
+  margin-right: 8px;
+  font-family: monospace;
+  text-transform: uppercase;
+
 }
 /* ==========================================================================
    Element styles
@@ -66,9 +93,14 @@ a:hover {
 }
 @content-height: 100vh;
 #header {
+  .top;
   position: absolute;
   right: 0;
   margin: 1em;
+}
+#resume {
+  .button-raised;
+  background-color: red !important;
 }
 /* ==========================================================================
    Profile styles
@@ -86,19 +118,18 @@ a:hover {
     width: @pic-dim;
     height: @pic-dim;
     border-radius: 1000px;
+    margin: 3em 0;
   }
 }
+
+#about {
+  margin-bottom: 3em;
+}
 .category {
-  font-family: monospace;
   display: inline;
-  text-transform: uppercase;
-  padding: 2px 4px;
-  background: grey;
-  border-radius: 2px;
-  transition: opacity 0.1s ease-in-out;
-  &:hover {
-    opacity: 0.8;
-  }
+  .button-raised;
+  padding: 4px 8px;
+  font-size: 12px;
 }
 /* ==========================================================================
    Content styles
@@ -118,13 +149,12 @@ a:hover {
   flex-wrap: wrap;
 }
 .content-block {
+  .card-z1;
   position: relative;
   height: @block-dim;
   width: @block-dim;
   min-height: @block-dim;
   margin: @block-margin;
-  outline: 1px solid black;
-  background: white;
   &:hover .block-overlay {
     visibility: visible;
     opacity: 1;
@@ -135,6 +165,7 @@ a:hover {
     flex-direction: column;
     height: 100%;
     width: 100%;
+    padding: 1em;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease-in-out, visibility 0s linear 300ms;
@@ -162,6 +193,7 @@ a:hover {
 }
 #info-wrapper {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -169,11 +201,25 @@ a:hover {
   background: white;
   .card-z3;
 }
+#info-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1em;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: rotate(135deg);
+  }
+}
 #info-header {
+  position: relative;
   min-height: 200px;
   width: 100%;
   flex-grow: 1;
   #title {
+    position: absolute;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     bottom: 0;
     margin: 1em;
   }
@@ -183,28 +229,19 @@ a:hover {
   width: 100%;
   flex-grow: 1.5;
   padding: 1.5em;
+  overflow: auto;
   #category {
-    .card-z1;
+    .button-raised;
     display: inline;
-    font-family: monospace;
-    text-transform: uppercase;
-    padding: 2px 4px;
-    background: #AAA;
-    border-radius: 2px;
   }
   #tags {
-    .card-z1;
     display: inline;
-    font-family: monospace;
-    text-transform: uppercase;
     div {
+      .button-raised;
       display: inline;
-      padding: 2px 4px;
-      background: #AAA;
-      border-radius: 2px;
-      margin: 4px;
     }
   }
+
   #description {
     margin-top: 1em;
   }

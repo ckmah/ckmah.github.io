@@ -187,7 +187,9 @@ gulp.task('serve', ['build'], function () {
 // Publish to GitHub Pages
 gulp.task('deploy', function() {
   return gulp.src('build/**/*')
-    .pipe($.ghPages());
+    .pipe($.ghPages(
+      branch: 'master'
+    ));
 });
 
 // Run PageSpeed Insights

@@ -1,12 +1,43 @@
 {
   "elements": [{
     "title": "DangoReader",
-    "category": "PROJECTS",
-    "tags": ["ANDROID, JAVA"]
-
+    "category": "projects",
+    "tags": ["android", "java"],
+    "description": "Android app for reading manga."
   }, {
-    "title": "VP - UBIC",
-    "category": "LEADERSHIP",
-    "tags": ["BIOINFORMATICS"]
+    "title": "Molecular Sequence Analysis",
+    "category": "projects",
+    "tags": ["bioinformatics", "python"],
+    "description": "Pevzner's class."
+  }, {
+    "title": "Peroxisome Gene Regulation Analysis",
+    "category": "experience",
+    "tags": ["research"],
+    "description": ""
+  }, {
+    "title": "Speech & Brain Machine Interfaces",
+    "category": "experience",
+    "tags": ["research", "scripting", "matlab", "python"],
+    "description": ""
+  }, {
+    "title": "Project Team Lead - BMES",
+    "category": "leadership",
+    "tags": ["event planning", "project management"],
+    "description": "I created amazing engineering research opportunities for undergraduates."
+  }, {
+    "title": "Vice President - UBIC",
+    "category": "leadership",
+    "tags": ["bioinformatics", ""],
+    "description": "Awesome undergraduate Bioinformatics resources."
+  }, {
+    "title": "Webmaster - BMES",
+    "category": "leadership",
+    "tags": ["web development"],
+    "description": "Made website for Biomedical Engineering Society."
+  }, {
+    "title": "National Academy of Engineering - Video Contest",
+    "category": "leadership",
+    "tags": [""],
+    "description": "Won the People's Choice Award for $5000."
   }]
 }

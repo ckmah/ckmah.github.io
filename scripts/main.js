@@ -17,13 +17,58 @@
  *
  */
 
-(function () {
+var $CARD = $('#info-card');
+
+
+(function() {
   'use strict';
 
+  // Set initial conditions.
+  init();
+
+  // Show details
   $('.content-block').click(function() {
     var $block = $(this);
-    $block.parent('.content-block').removeClass('expanded');
-    $block.addClass('expanded');
+
+    // bind data
+    $CARD.find('#title').text($block.data('title'));
+    $CARD.find('#category').text($block.data('category'));
+
+    $CARD.find('#tags').text('');
+    var tags = String($block.data('tags')).split(',');
+    for (var str of tags) {
+      var div = document.createElement('div');
+      div.innerHTML = str;
+      $CARD.find('#tags').append(div);
+    }
+    $CARD.find('#description').text($block.data('description'));
+
+    $CARD.fadeIn(300);
+  });
+
+  $('#card-close').click(function() {
+    $('#info-card').fadeOut(300);
+  });
+
+  $('.tag').hover(function() {
+    var categoryClass = $(this).text();
+    console.log(categoryClass);
+    $('.' + categoryClass).fadeTo(150, 0.4);
+  }, function(event) {
+    var categoryClass = $(this).text();
+    $('.' + categoryClass).fadeTo(150, 1);
   });
 
 })();
+
+/**
+ * Set initial conditions on page load.
+ */
+function init() {
+  'use strict';
+  $CARD.hide();
+  // particlesJS.load('particles-js', '../particles.json', function() {
+  //     console.log('callback - particles.js config loaded');
+  //   });
+
+}

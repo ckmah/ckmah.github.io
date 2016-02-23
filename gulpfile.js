@@ -127,7 +127,7 @@ gulp.task('styles', function () {
 
 // JavaScript
 gulp.task('scripts', function () {
-  src.scripts = ['scripts/plugins.js', 'scripts/main.js'];
+  src.scripts = ['node_modules/particles.js/particles.js', 'scripts/plugins.js', 'scripts/main.js'];
   return gulp.src(src.scripts)
     .pipe($.if(!RELEASE, $.sourcemaps.init()))
     .pipe($.concat('bundle.js'))
@@ -151,6 +151,7 @@ gulp.task('serve', ['build'], function () {
 
   browserSync({
     notify: false,
+    open: false,
     // Run as an https by uncommenting 'https: true'
     // Note: this uses an unsigned certificate which on first access
     //     will present a certificate warning in the browser.

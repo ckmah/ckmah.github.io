@@ -6,6 +6,7 @@ block title
   title Static Website
 
 block body
+  div#particles-js
   div#header
     a(href="Clarence Mah - Resume.pdf") Resume
     |	| 
@@ -15,6 +16,5 @@ block body
       img#pic.img-responsive(src="img/face.jpg", alt="")
       div#about
         h1#name Hello, I'm Clarence Mah.
-        p I am an aspiring bioinformatician, who loves to tag1, tag2, and tag3. Take a look at my EXPERIENCE, LEADERSHIP, AND PROJECTS.
-    div#content.col-sm-8
-      include ../partials/content.jade
+        p I am an aspiring bioinformatician, who loves to tag1, tag2, and tag3. Take a look at my #[div.category experience] #[div.category leadership] and #[div.category projects]
+    include ../partials/content.jade

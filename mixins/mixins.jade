@@ -1,7 +1,5 @@
-mixin content-block(name, category)
-  div.content-block
+mixin content-block(name, category, tags, description)
+  div(class="content-block #{category}" data-title=name data-category=category data-tags=tags data-description=description)
     div.block-overlay
       h3#name= name
       h5#category= category
-    div.block-expand-header
-    div.block-expand-info

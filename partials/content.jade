@@ -3,10 +3,10 @@
 - var projects = 'Projects'
 - var exp = 'Experience'
 - var lead = 'Leadership'
-//- - blockData = {'One': projects, 'Two': exp, 'Three': lead, 'Four': projects, 'Five': exp, 'Six': lead, 'Seven': projects, 'Eight': exp}
 - var blockData = content.elements
 
-div#content-box
-  div
-  each block in blockData
-    +content-block(block.title, block.category)
+div#content.col-sm-8
+  include ../partials/infocard.jade
+  div#content-box
+    each block in blockData
+      +content-block(block.title, block.category, block.tags, block.description)

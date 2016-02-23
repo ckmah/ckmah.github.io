@@ -34,6 +34,7 @@
     "gulp-util": "^3.0.4",
     "merge-stream": "^0.1.7",
     "minimist": "^1.1.1",
+    "particles.js": "^2.0.0",
     "psi": "^1.0.6",
     "run-sequence": "^1.0.2"
   }

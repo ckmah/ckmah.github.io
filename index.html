@@ -14,79 +14,87 @@
       Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
     </p><![endif]-->
     <div id="particles-js"></div>
-    <div id="header"><a id="resume" href="Clarence Mah - Resume.pdf">Resume</a></div>
+    <div id="header"><a id="email" href="mailto:clarence.k.mah@gmail.com" class="icon"><img src="img/email-logo.png" alt=""></a><a id="linkedin" href="http://linkedin.com/in/clarencemah" target="_blank" class="icon"><img src="img/linkedin-logo.png" alt=""></a><a id="github" href="http://github.com/ckmah" target="_blank" class="icon"><img src="img/github-logo.png" alt=""></a><a id="resume" href="resume.pdf" target="_blank">Resume</a></div>
     <div class="container">
       <div id="profile" class="col-sm-4"><img id="pic" src="img/face.jpg" alt="">
         <div id="about">
-          <h1 id="name">Hello, I'm Clarence Mah.</h1>
-          <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quia, porro veniam assumenda explicabo. Amet deleniti rem eos est quasi dolore sit, quisquam ut odit fugiat, repudiandae eius porro consequuntur.</div><br>
-          <div>Take a look at my
-            <div class="category">experience</div> 
-            <div class="category">leadership</div>and  
-            <div class="category">projects</div>
+          <h1 id="name">Clarence Mah</h1>
+          <div>An aspiring bioinformatician enthusiastic about DIY projects and self-directed learning. Also an avid techie and casual musician.</div><br>
+          <div>Here are some 
+            <div class="category">projects</div> 
+            <div class="category">experience</div>and  
+            <div class="category">leadership</div>I am passionate about.
           </div>
         </div>
       </div>
       <div id="content" class="col-sm-8">
-        <div id="info-card">
+        <div id="info-card" class="col-xs-3">
           <div id="info-wrapper">
             <div id="info-header">
-              <h2 id="title"></h2>
+              <div id="info-pic"></div>
+              <h4 id="title"></h4>
             </div>
             <div id="info-close"><span class="glyphicon glyphicon-remove"></span></div>
             <div id="info-description">
               <div id="category"></div>
-              <div id="tags"></div>
               <p id="description"></p>
             </div>
           </div>
         </div>
         <div id="content-box">
-          <div data-title="DangoReader" data-category="projects" data-tags='["android","java"]' data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="content-block projects">
-            <div style="background-image:url(http://placehold.it/300?text=PLACEHOLDER)" class="block-overlay">
+          <div data-title="DangoReader" data-category="projects" data-tags='["android","java","web-dev"]' data-description="An Android application created for users to browse, read, and maintain a personal library of Japanese comics called Manga. I was the lead Android developer, responsible for designing the user interface and implementing JSON to database mapping. I also developed the landing page for app distribution." data-image="url(../img/dango.png)" class="content-block projects">
+            <div style="background: url(../img/dango_thumbnail.png)" class="block-bg"></div>
+            <div class="block-overlay">
               <h3 id="name">DangoReader</h3>
               <h5 id="category">projects</h5>
             </div>
           </div>
-          <div data-title="Molecular Sequence Analysis" data-category="projects" data-tags='["bioinformatics","python"]' data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="content-block projects">
-            <div style="background-image:url(http://placehold.it/300?text=PLACEHOLDER)" class="block-overlay">
+          <div data-title="Molecular Sequence Analysis" data-category="projects" data-tags='["bioinformatics","python","algorithms"]' data-description="Application of computer science and novel algorithms to molecular sequence analysis. Some of the core genomic algorithsm I learned and implemented include algorithms for sequence alignment, assembly, rearrangement, and variants. Extensive scripting in Python." data-image="url(../img/rosalind.png)" class="content-block projects">
+            <div style="background: url(../img/rosalind_thumbnail.png)" class="block-bg"></div>
+            <div class="block-overlay">
               <h3 id="name">Molecular Sequence Analysis</h3>
               <h5 id="category">projects</h5>
             </div>
           </div>
-          <div data-title="Peroxisome Gene Regulation Analysis" data-category="experience" data-tags='["research"]' data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="content-block experience">
-            <div style="background-image:url(http://placehold.it/300?text=PLACEHOLDER)" class="block-overlay">
+          <div data-title="Peroxisome Gene Regulation Analysis" data-category="experience" data-tags='["research","motif analysis","functional enrichment"]' data-description="I performed DNA motif enrichment anlaysis in collaboration with postdoctoral researchers using Next Generation Sequencing (NGS) bioinformatics tools. I researched CRISPR-Cas system design of guide RNAs for gene-knockout experiments." data-image="url(../img/peroxisome_poster.png)" class="content-block experience">
+            <div style="background: url(../img/cell_thumbnail.png)" class="block-bg"></div>
+            <div class="block-overlay">
               <h3 id="name">Peroxisome Gene Regulation Analysis</h3>
               <h5 id="category">experience</h5>
             </div>
           </div>
-          <div data-title="Speech &amp; Brain Machine Interfaces" data-category="experience" data-tags='["research","scripting","matlab","python"]' data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="content-block experience">
-            <div style="background-image:url(http://placehold.it/300?text=PLACEHOLDER)" class="block-overlay">
+          <div data-title="Speech &amp; Brain Machine Interfaces" data-category="experience" data-tags='["translational research","matlab","python"]' data-description="The goal of this research is to open the door to neural prostheses for speech. I assisted in creating a behavioral study to design an experimental framework to study correlations in speech and ECoG data. I also prototyped a visual interface for the neurally controlled speech prosthesis." data-image="url(../img/speech-prosthesis.png)" class="content-block experience">
+            <div style="background: url(../img/brain_thumbnail.png)" class="block-bg"></div>
+            <div class="block-overlay">
               <h3 id="name">Speech &amp; Brain Machine Interfaces</h3>
               <h5 id="category">experience</h5>
             </div>
           </div>
-          <div data-title="Project Team Lead - BMES" data-category="leadership" data-tags='["event planning","project management"]' data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="content-block leadership">
-            <div style="background-image:url(http://placehold.it/300?text=PLACEHOLDER)" class="block-overlay">
-              <h3 id="name">Project Team Lead - BMES</h3>
+          <div data-title="Project Team Lead: BMES" data-category="leadership" data-tags='["event planning","project management"]' data-description="I was charged with creating a research program for undergraduates and engineering project teams by providing resources such as advising, funding, recruitment, and lab space. I successfully generated 15 undergraduate research positions and sponsored 3 student teams to compete in national engineering competitions." data-image="url(../img/project-team.jpg)" class="content-block leadership">
+            <div style="background: url(../img/project-team_thumbnail.jpg)" class="block-bg"></div>
+            <div class="block-overlay">
+              <h3 id="name">Project Team Lead: BMES</h3>
               <h5 id="category">leadership</h5>
             </div>
           </div>
-          <div data-title="Vice President - UBIC" data-category="leadership" data-tags='["bioinformatics",""]' data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="content-block leadership">
-            <div style="background-image:url(http://placehold.it/300?text=PLACEHOLDER)" class="block-overlay">
-              <h3 id="name">Vice President - UBIC</h3>
+          <div data-title="Internal Vice President: UBIC" data-category="leadership" data-tags='["bioinformatics","event planning"]' data-description="As internal Vice President of the Undergraduate Bioinformatics Club (UBIC) at UC San Deigo, I coordinated a board of 8 officers to plan wide variety of events, from workshops to panels to industry networking events." data-image="url(../img/ubic.png)" class="content-block leadership">
+            <div style="background: url(../img/ubic_thumbnail.png)" class="block-bg"></div>
+            <div class="block-overlay">
+              <h3 id="name">Internal Vice President: UBIC</h3>
               <h5 id="category">leadership</h5>
             </div>
           </div>
-          <div data-title="Webmaster - BMES" data-category="leadership" data-tags='["web development"]' data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="content-block leadership">
-            <div style="background-image:url(http://placehold.it/300?text=PLACEHOLDER)" class="block-overlay">
-              <h3 id="name">Webmaster - BMES</h3>
+          <div data-title="Webmaster: BMES" data-category="leadership" data-tags='["web development"]' data-description="I redesigned the website for the Biomedical Engineering Society at UC San Diego to facilitate better communication and accessibility for club members and prospective industry sponsors." data-image="url(../img/bmes_website.jpg)" class="content-block leadership">
+            <div style="background: url(../img/bmes_thumbnail.png)" class="block-bg"></div>
+            <div class="block-overlay">
+              <h3 id="name">Webmaster: BMES</h3>
               <h5 id="category">leadership</h5>
             </div>
           </div>
-          <div data-title="National Academy of Engineering - Video Contest" data-category="leadership" data-tags='[""]' data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." class="content-block leadership">
-            <div style="background-image:url(http://placehold.it/300?text=PLACEHOLDER)" class="block-overlay">
-              <h3 id="name">National Academy of Engineering - Video Contest</h3>
+          <div data-title="NAE: Video Contest" data-category="leadership" data-tags='[]' data-description="I led a team of students to create a video for the National Academy of Engineering's 50th Anniversary Video Contest ot promote innovations in engineering from the past, present, and future. We were the winners of the People's Choice Award for a prize of $5,000." data-image="url(../img/nae-video.jpg)" class="content-block leadership">
+            <div style="background: url(../img/nae-video.jpg)" class="block-bg"></div>
+            <div class="block-overlay">
+              <h3 id="name">NAE: Video Contest</h3>
               <h5 id="category">leadership</h5>
             </div>
           </div>

@@ -73,8 +73,8 @@ var $CARD = $('#info-card');
 function init() {
   'use strict';
   $CARD.hide();
-  // particlesJS.load('particles-js', '../particles.json', function() {
-  //   console.log('callback - particles.js config loaded');
-  // });
+  particlesJS.load('particles-js', '../particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
 
 }

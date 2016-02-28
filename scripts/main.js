@@ -32,16 +32,19 @@ var $CARD = $('#info-card');
 
     // bind data
     $CARD.find('#title').text($block.data('title'));
-    $CARD.find('#info-header').css('background-image', 'url(http://placehold.it/300?text=PLACEHOLDER)');
+    $CARD.find('#info-pic').css('background-image', $block.data('image'));
     $CARD.find('#category').text($block.data('category'));
 
     // Put each tag in its own div
-    $CARD.find('#tags').text('');
+    $CARD.find('.tag').remove();
     var tags = String($block.data('tags')).split(',');
-    for (var str of tags) {
-      var div = document.createElement('div');
-      div.innerHTML = str;
-      $CARD.find('#tags').append(div);
+    if (tags[0] !== '') {
+      for (var str of tags) {
+        var div = document.createElement('div');
+        div.innerHTML = str;
+        $(div).addClass('tag');
+        $CARD.find('#category').after(div);
+      }
     }
 
     $CARD.find('#description').text($block.data('description'));
@@ -53,13 +56,13 @@ var $CARD = $('#info-card');
     $('#info-card').fadeOut(300);
   });
 
-  $('.tag').hover(function() {
+  $('.category').hover(function() {
     var categoryClass = $(this).text();
-    console.log(categoryClass);
-    $('.' + categoryClass).fadeTo(150, 0.4);
+    console.log('hover');
+    $('.' + categoryClass).addClass('content-block-hover');
   }, function(event) {
     var categoryClass = $(this).text();
-    $('.' + categoryClass).fadeTo(150, 1);
+    $('.' + categoryClass).removeClass('content-block-hover');
   });
 
 })();
@@ -70,8 +73,8 @@ var $CARD = $('#info-card');
 function init() {
   'use strict';
   $CARD.hide();
-  particlesJS.load('particles-js', '../particles.json', function() {
-      console.log('callback - particles.js config loaded');
-    });
+  // particlesJS.load('particles-js', '../particles.json', function() {
+  //   console.log('callback - particles.js config loaded');
+  // });
 
 }

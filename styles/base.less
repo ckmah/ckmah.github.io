@@ -1,20 +1,20 @@
 // @import "pesticide";
 /* ==========================================================================
+   Color styles
+   ========================================================================== */
+@primary-color: #EEE;
+@secondary-color: #8fabb5;
+@tertiary-color: #326f89;
+@quaternary-color: #154456;
+@accent-color: #fff25c;
+/* ==========================================================================
    Base styles
    ========================================================================== */
 html,
 body {
-  background-color: #f9f9f9;
+  background-color: @quaternary-color;
+  background: linear-gradient(30deg, #000, #444);
   padding: 0;
-}
-a {
-  color: black;
-  &:hover {
-    text-decoration: none;
-  }
-}
-h3 {
-  font-size: 18px;
 }
 .container {
   .no-padding;
@@ -30,6 +30,82 @@ h3 {
   z-index: 1;
 }
 /* ==========================================================================
+   Font styling
+   ========================================================================== */
+@font-face {
+  font-family: 'aovel-sans';
+  src: url('../fonts/asansreg-webfont.eot');
+  src: url('../fonts/asansreg-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/asansreg-webfont.woff') format('woff'), url('../fonts/asansreg-webfont.ttf') format('truetype'), url('../fonts/asansreg-webfont.svg#webfont') format('svg');
+}
+@font-face {
+  font-family: 'fira-sans';
+  src: url('../fonts/firasans-light-webfont.eot');
+  src: url('../fonts/firasans-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-light-webfont.woff') format('woff'), url('../fonts/firasans-light-webfont.ttf') format('truetype'), url('../fonts/firasans-light-webfont.svg#webfont') format('svg');
+}
+@font-face {
+  font-family: 'kelson';
+  src: url('../fonts/Kelson Sans Light.otf');
+}
+@font-face {
+  font-family: 'fabrica';
+  src: url('../fonts/Fabrica.otf');
+}
+@font-face {
+  font-family: 'dekar';
+  src: url('../fonts/Dekar.otf');
+}
+@font-face {
+  font-family: 'titillium';
+  src: url('../fonts/Titillium-Regular.otf');
+}
+@font-face {
+  font-family: 'raleway';
+  src: url('../fonts/Raleway-Regular.ttf');
+}
+@font-face {
+  font-family: 'monospace';
+  src: url('../fonts/Consolas.ttf');
+}
+@golden-ratio: 1.61803399;
+* {
+  font-family: 'titillium', Arial, "Lucida Grande", sans-serif;
+  line-height: @golden-ratio;
+  // -webkit-font-smoothing: antialiased !important;
+  font-size: 18px;
+  color: white;
+}
+a {
+  text-decoration: none !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'raleway', Arial, "Lucida Grande", sans-serif;
+  padding: 0.5em 0;
+  margin: 0;
+  line-height: 1.3;
+  // -webkit-text-stroke: 0.1px;
+  // font-weight: 400;
+}
+h1 {
+  font-size: 48px;
+  .raised-text;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 18px;
+}
+h4 {
+  font-size: 26px;
+}
+h5 {
+  font-size: 12px;
+}
+/* ==========================================================================
    Less Mixins
    ========================================================================== */
 .flex-center-all {
@@ -42,46 +118,58 @@ h3 {
 }
 .card {
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 3px;
+}
+.raised-text {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+.raised-box {
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.22), 1px 1px 2px rgba(0,0,0,0.34);
 }
 .card-z1 {
   .card;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.22), 0 1px 2px rgba(0,0,0,0.34);
 }
 .card-z2 {
   .card;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.33) !important;
 }
 .card-z3 {
   .card;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.29), 0 6px 6px rgba(0,0,0,0.33) !important;
 }
 .card-z4 {
   .card;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.32) !important;
 }
 .card-z5 {
   .card;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  box-shadow: 0 19px 38px rgba(0,0,0,0.4), 0 15px 12px rgba(0,0,0,0.32) !important;
 }
-
 .card-raised {
   .card-z1;
-  transition: all 0.2s ease-in-out;
-  &:hover {
+  transition: all 0.1s ease-in-out;
+  &:active {
     .card-z2;
   }
 }
-
 .button-raised {
   .card-raised;
-  padding: 4px 12px;
-  background: #AAA;
+  padding: 6px 12px;
+  background: @tertiary-color;
+  color: white;
   border-radius: 2px;
   margin-right: 8px;
-  font-family: monospace;
+  font-family: 'monospace';
   text-transform: uppercase;
-
+  cursor: pointer;
+  &:hover {
+    background: lighten(@accent-color, 10%);
+    color: @quaternary-color;
+  }
+  &:active {
+    transform: scale(0.95);
+  }
 }
 /* ==========================================================================
    Element styles
@@ -90,7 +178,22 @@ h3 {
   position: absolute;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  filter: blur(2px) contrast(10) saturate(0.8);
+  animation: myChange 5s 1;
 }
+@keyframes myChange{
+  0%{
+    -webkit-filter:blur(15px) contrast(30) saturate(0.8);
+  }
+  50%{
+    -webkit-filter:blur(5px) contrast(20) saturate(0.8);
+  }
+  100%{
+    -webkit-filter:blur(1px) contrast(10) saturate(0.8);
+  }
+}
+@content-min-height: 700px;
 @content-height: 100vh;
 #header {
   .top;
@@ -100,7 +203,31 @@ h3 {
 }
 #resume {
   .button-raised;
-  background-color: red !important;
+  margin-left: 0.5em;
+  // background-color: green !important;
+}
+.icon {
+  display: inline;
+}
+.icon img {
+  // .card;
+  height: 2em;
+  width: 2em;
+  .card;
+  filter: drop-shadow(0 0 3px #000);
+  background: rgba(0,0,0,0);
+  padding: 0.4em;
+  margin: 0.5em;
+  transition: background 0.2s ease-in-out;
+}
+#github:hover img {
+  background: #777;
+}
+#linkedin:hover img {
+  background: #0077B5;
+}
+#email:hover img {
+  background: #c92c19;
 }
 /* ==========================================================================
    Profile styles
@@ -111,25 +238,31 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: @content-min-height;
   height: @content-height;
   @pic-dim: 220px;
   #pic {
     overflow: hidden;
+    min-width: @pic-dim;
+    min-height: @pic-dim;
     width: @pic-dim;
     height: @pic-dim;
-    border-radius: 1000px;
-    margin: 3em 0;
+    border-radius: 1000px !important;
+    margin: 2em 0;
+    .card-z2;
   }
 }
-
 #about {
   margin-bottom: 3em;
+}
+#about > div {
+  color: darken(@primary-color, 10%);
 }
 .category {
   display: inline;
   .button-raised;
   padding: 4px 8px;
-  font-size: 12px;
+  font-size: 14px;
 }
 /* ==========================================================================
    Content styles
@@ -137,44 +270,77 @@ h3 {
 #content {
   .bottom;
   .flex-center-all;
+  min-height: @content-min-height;
   height: @content-height;
   .no-padding;
 }
 @block-dim: 150px;
-@block-margin: 4px;
-@box-width: 4*@block-dim + 8*@block-margin;
+@block-margin: 8px;
+@box-width: 100%;
 #content-box {
   .flex-center-all;
   width: @box-width;
   flex-wrap: wrap;
 }
+.content-block-hover {
+  .card-z2;
+  transform: scale(1.05);
+}
 .content-block {
   .card-z1;
+  cursor: pointer;
   position: relative;
   height: @block-dim;
   width: @block-dim;
   min-height: @block-dim;
   margin: @block-margin;
+  background: #DDD;
+  background-size: auto @block-dim;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    .content-block-hover;
+  }
   &:hover .block-overlay {
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
   }
-  .block-overlay {
-    .flex-center-all;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    padding: 1em;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, visibility 0s linear 300ms;
-    #title {
-      text-transform: capitalize;
-    }
-    #category {
-      text-transform: uppercase;
-    }
+  &:hover .block-bg {
+    filter:blur(1px);
+  }
+  &:active {
+    transform: scale(.95);
+  }
+}
+.block-bg {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+}
+.block-overlay {
+  z-index: 2;
+  .flex-center-all;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0.5em 1em;
+  position: absolute;
+  background: rgba(0,0,0,0.6);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 300ms;
+  #title {
+    text-transform: capitalize;
+  }
+  #category {
+    text-transform: uppercase;
   }
 }
 /* ==========================================================================
@@ -188,6 +354,7 @@ h3 {
   width: 100%;
   height: 100%;
   display: flex;
+  padding: 0;
   align-items: center;
   justify-content: center;
 }
@@ -197,9 +364,10 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   background: white;
-  .card-z3;
+  .card-z1;
 }
 #info-close {
   position: absolute;
@@ -207,43 +375,53 @@ h3 {
   right: 0;
   margin: 1em;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  text-shadow: 0 0 5px rgba(0,0,50,0.36), 0 0 3px rgba(0,0,50,0.60);
   &:hover {
-    transform: rotate(135deg);
+    transform: rotate(90deg);
   }
 }
+@description-height: 250px;
 #info-header {
   position: relative;
-  min-height: 200px;
+  height: @description-height*@golden-ratio;
   width: 100%;
-  flex-grow: 1;
-  #title {
+  background: linear-gradient(@tertiary-color, @quaternary-color);
+  #info-pic {
     position: absolute;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  #title {
+    .raised-text;
+    .raised-box;
+    position: absolute;
     bottom: 0;
-    margin: 1em;
+    margin: 1em 1em 1em 0;
+    padding: 0.5em 1em;
+    background: @quaternary-color;
   }
 }
 #info-description {
-  min-height: 300px;
+  height: @description-height;
   width: 100%;
-  flex-grow: 1.5;
   padding: 1.5em;
-  overflow: auto;
-  #category {
+  overflow-y: auto;
+  background: #DDD;
+  #category,
+  .tag {
     .button-raised;
-    display: inline;
+    display: inline-flex;
+    white-space: nowrap;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
-  #tags {
-    display: inline;
-    div {
-      .button-raised;
-      display: inline;
-    }
-  }
-
   #description {
     margin-top: 1em;
+    color: black;
   }
 }
 /* ==========================================================================

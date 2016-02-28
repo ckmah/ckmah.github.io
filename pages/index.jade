@@ -8,13 +8,16 @@ block title
 block body
   div#particles-js
   div#header
-    a#resume(href="Clarence Mah - Resume.pdf") Resume
+    a#email.icon(href="mailto:clarence.k.mah@gmail.com"): img(src="img/email-logo.png", alt="")
+    a#linkedin.icon(href="http://linkedin.com/in/clarencemah" target="_blank"): img(src="img/linkedin-logo.png", alt="")
+    a#github.icon(href="http://github.com/ckmah" target="_blank"): img(src="img/github-logo.png", alt="")
+    a#resume(href="resume.pdf" target="_blank") Resume
   div.container
     div#profile.col-sm-4
       img#pic(src="img/face.jpg", alt="")
       div#about
-        h1#name Hello, I'm Clarence Mah.
-        div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quia, porro veniam assumenda explicabo. Amet deleniti rem eos est quasi dolore sit, quisquam ut odit fugiat, repudiandae eius porro consequuntur.
+        h1#name Clarence Mah
+        div An aspiring bioinformatician enthusiastic about DIY projects and self-directed learning. Also an avid techie and casual musician.
         br
-        div Take a look at my#[div.category experience] #[div.category leadership]and  #[div.category projects]
+        div Here are some #[div.category projects] #[div.category experience]and  #[div.category leadership]I am passionate about.
     include ../partials/content.jade

@@ -51,6 +51,9 @@ var pkgs = require('./package.json').dependencies;
 // The default task
 gulp.task('default', ['serve']);
 
+gulp.task('clearCache', function() {
+  $.cache.clearAll();
+});
 // Clean up
 gulp.task('clean', del.bind(null, ['build/*', '!build/.git'], {
   dot: true
@@ -88,7 +91,7 @@ gulp.task('images', function() {
 
 // Fonts
 gulp.task('fonts', function() {
-  return gulp.src('node_modules/bootstrap/fonts/**')
+  return gulp.src(['node_modules/bootstrap/fonts/**', 'fonts/**/*'])
     .pipe(gulp.dest('build/fonts'));
 });
 

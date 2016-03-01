@@ -4,7 +4,7 @@
     "category": "projects",
     "tags": ["android", "java", "web-dev"],
     "description": "An Android application created for users to browse, read, and maintain a personal library of Japanese comics called Manga. I was the lead Android developer, responsible for designing the user interface and implementing JSON to database mapping. I also developed the landing page for app distribution.",
-    "thumbnail":"url(../img/dango_thumbnail.png)",
+    "thumbnail":"url(../img/phone_thumbnail.png)",
     "image": "url(../img/dango.png)"
   }, {
     "title": "Molecular Sequence Analysis",

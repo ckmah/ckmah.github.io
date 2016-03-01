@@ -13,7 +13,7 @@
 html,
 body {
   background-color: @quaternary-color;
-  background: linear-gradient(30deg, #000, #444);
+  background: linear-gradient(30deg, #E0E0E0, #E0E0E0);
   padding: 0;
 }
 .container {
@@ -179,7 +179,7 @@ h5 {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  filter: blur(2px) contrast(10) saturate(0.8);
+  filter: blur(1px) contrast(10) saturate(0.8);
   animation: myChange 5s 1;
 }
 @keyframes myChange{
@@ -214,14 +214,14 @@ h5 {
   height: 2em;
   width: 2em;
   .card;
-  filter: drop-shadow(0 0 3px #000);
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.7));
   background: rgba(0,0,0,0);
   padding: 0.4em;
   margin: 0.5em;
   transition: background 0.2s ease-in-out;
 }
 #github:hover img {
-  background: #777;
+  background: #222;
 }
 #linkedin:hover img {
   background: #0077B5;
@@ -256,7 +256,7 @@ h5 {
   margin-bottom: 3em;
 }
 #about > div {
-  color: darken(@primary-color, 10%);
+  color: black;
 }
 .category {
   display: inline;

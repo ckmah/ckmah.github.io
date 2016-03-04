@@ -1,60 +1,68 @@
 {
   "elements": [{
-    "title": "DangoReader",
-    "category": "projects",
-    "tags": ["android", "java", "web-dev"],
-    "description": "An Android application created for users to browse, read, and maintain a personal library of Japanese comics called Manga. I was the lead Android developer, responsible for designing the user interface and implementing JSON to database mapping. I also developed the landing page for app distribution.",
-    "thumbnail":"url(../img/phone_thumbnail.png)",
-    "image": "url(../img/dango.png)"
+    "title": "Experience",
+    "blocks": [{
+      "title": "Peroxisome Gene Regulation Analysis",
+      "category": "experience",
+      "tags": ["research", "motif analysis", "functional enrichment"],
+      "description": "I performed DNA motif enrichment anlaysis in collaboration with postdoctoral researchers using Next Generation Sequencing (NGS) bioinformatics tools. I researched CRISPR-Cas system design of guide RNAs for gene-knockout experiments.",
+      "thumbnail": "url(../img/cell_thumbnail.png)",
+      "image": "url(../img/peroxisome_poster.png)"
+    }, {
+      "title": "Speech & Brain Machine Interfaces",
+      "category": "experience",
+      "tags": ["translational research", "matlab", "python"],
+      "description": "The goal of this research is to open the door to neural prostheses for speech. I assisted in creating a behavioral study to design an experimental framework to study correlations in speech and ECoG data. I also prototyped a visual interface for the neurally controlled speech prosthesis.",
+      "thumbnail": "url(../img/brain_thumbnail.png)",
+      "image": "url(../img/speech-prosthesis.png)"
+    }]
   }, {
-    "title": "Molecular Sequence Analysis",
-    "category": "projects",
-    "tags": ["bioinformatics", "python", "algorithms"],
-    "description": "Application of computer science and novel algorithms to molecular sequence analysis. Some of the core genomic algorithsm I learned and implemented include algorithms for sequence alignment, assembly, rearrangement, and variants. Extensive scripting in Python.",
-    "thumbnail":"url(../img/rosalind_thumbnail.png)",
-    "image": "url(../img/rosalind.png)"
+    "title": "Projects",
+    "blocks": [{
+      "title": "DangoReader",
+      "category": "projects",
+      "tags": ["android", "java", "web-dev"],
+      "description": "An Android application created for users to browse, read, and maintain a personal library of Japanese comics called Manga. I was the lead Android developer, responsible for designing the user interface and implementing JSON to database mapping. I also developed the landing page for app distribution.",
+      "thumbnail": "url(../img/phone_thumbnail.png)",
+      "image": "url(../img/dango.png)"
+    }, {
+      "title": "Molecular Sequence Analysis",
+      "category": "projects",
+      "tags": ["bioinformatics", "python", "algorithms"],
+      "description": "Application of computer science and novel algorithms to molecular sequence analysis. Some of the core genomic algorithsm I learned and implemented include algorithms for sequence alignment, assembly, rearrangement, and variants. Extensive scripting in Python.",
+      "thumbnail": "url(../img/rosalind_thumbnail.png)",
+      "image": "url(../img/rosalind.png)"
+    }]
   }, {
-    "title": "Peroxisome Gene Regulation Analysis",
-    "category": "experience",
-    "tags": ["research", "motif analysis", "functional enrichment"],
-    "description": "I performed DNA motif enrichment anlaysis in collaboration with postdoctoral researchers using Next Generation Sequencing (NGS) bioinformatics tools. I researched CRISPR-Cas system design of guide RNAs for gene-knockout experiments.",
-    "thumbnail":"url(../img/cell_thumbnail.png)",
-    "image": "url(../img/peroxisome_poster.png)"
-  }, {
-    "title": "Speech & Brain Machine Interfaces",
-    "category": "experience",
-    "tags": ["translational research", "matlab", "python"],
-    "description": "The goal of this research is to open the door to neural prostheses for speech. I assisted in creating a behavioral study to design an experimental framework to study correlations in speech and ECoG data. I also prototyped a visual interface for the neurally controlled speech prosthesis.",
-    "thumbnail":"url(../img/brain_thumbnail.png)",
-    "image": "url(../img/speech-prosthesis.png)"
-  }, {
-    "title": "Project Team Lead: BMES",
-    "category": "leadership",
-    "tags": ["event planning", "project management"],
-    "description": "I was charged with creating a research program for undergraduates and engineering project teams by providing resources such as advising, funding, recruitment, and lab space. I successfully generated 15 undergraduate research positions and sponsored 3 student teams to compete in national engineering competitions.",
-    "thumbnail":"url(../img/project-team_thumbnail.jpg)",
-    "image": "url(../img/project-team.jpg)"
-  }, {
-    "title": "Internal Vice President: UBIC",
-    "category": "leadership",
-    "tags": ["bioinformatics", "event planning"],
-    "description": "As internal Vice President of the Undergraduate Bioinformatics Club (UBIC) at UC San Deigo, I coordinated a board of 8 officers to plan wide variety of events, from workshops to panels to industry networking events.",
-    "thumbnail":"url(../img/ubic_thumbnail.png)",
-    "image": "url(../img/ubic.png)"
-  }, {
-    "title": "Webmaster: BMES",
-    "category": "leadership",
-    "tags": ["web development"],
-    "description": "I redesigned the website for the Biomedical Engineering Society at UC San Diego to facilitate better communication and accessibility for club members and prospective industry sponsors.",
-    "thumbnail":"url(../img/bmes_thumbnail.png)",
-    "image": "url(../img/bmes_website.jpg)"
-  }, {
-    "title": "NAE: Video Contest",
-    "category": "leadership",
-    "tags": [],
-    "description": "I led a team of students to create a video for the National Academy of Engineering's 50th Anniversary Video Contest ot promote innovations in engineering from the past, present, and future. We were the winners of the People's Choice Award for a prize of $5,000.",
-    "thumbnail":"url(../img/nae-video.jpg)",
-    "image": "url(../img/nae-video.jpg)"
-
+    "title": "Leadership",
+    "blocks": [{
+      "title": "Project Team Lead: BMES",
+      "category": "leadership",
+      "tags": ["event planning", "project management"],
+      "description": "I was charged with creating a research program for undergraduates and engineering project teams by providing resources such as advising, funding, recruitment, and lab space. I successfully generated 15 undergraduate research positions and sponsored 3 student teams to compete in national engineering competitions.",
+      "thumbnail": "url(../img/project-team_thumbnail.jpg)",
+      "image": "url(../img/project-team.jpg)"
+    }, {
+      "title": "Internal Vice President: UBIC",
+      "category": "leadership",
+      "tags": ["bioinformatics", "event planning"],
+      "description": "As internal Vice President of the Undergraduate Bioinformatics Club (UBIC) at UC San Deigo, I coordinated a board of 8 officers to plan wide variety of events, from workshops to panels to industry networking events.",
+      "thumbnail": "url(../img/ubic_thumbnail.png)",
+      "image": "url(../img/ubic.png)"
+    }, {
+      "title": "Webmaster: BMES",
+      "category": "leadership",
+      "tags": ["web development"],
+      "description": "I redesigned the website for the Biomedical Engineering Society at UC San Diego to facilitate better communication and accessibility for club members and prospective industry sponsors.",
+      "thumbnail": "url(../img/bmes_thumbnail.png)",
+      "image": "url(../img/bmes_website.jpg)"
+    }, {
+      "title": "NAE: Video Contest",
+      "category": "leadership",
+      "tags": [],
+      "description": "I led a team of students to create a video for the National Academy of Engineering's 50th Anniversary Video Contest ot promote innovations in engineering from the past, present, and future. We were the winners of the People's Choice Award for a prize of $5,000.",
+      "thumbnail": "url(../img/nae-video.jpg)",
+      "image": "url(../img/nae-video.jpg)"
+    }]
   }]
 }

@@ -5,19 +5,50 @@ include ../mixins/mixins
 block title
   title Static Website
 
+console.log(blockData)
 block body
   div#particles-js
   div#header
-    a#email.icon(href="mailto:clarence.k.mah@gmail.com"): img(src="img/email-logo.png", alt="")
-    a#linkedin.icon(href="http://linkedin.com/in/clarencemah" target="_blank"): img(src="img/linkedin-logo.png", alt="")
-    a#github.icon(href="http://github.com/ckmah" target="_blank"): img(src="img/github-logo.png", alt="")
-    a#resume(href="resume.pdf" target="_blank") Resume
-  div.container
-    div#profile
-      img#pic(src="img/face.jpg", alt="")
-      div#about
+    //- a#email.icon(href="mailto:clarence.k.mah@gmail.com"): img(src="img/email-logo.png", alt="")
+    //- a#linkedin.icon(href="http://linkedin.com/in/clarencemah" target="_blank"): img(src="img/linkedin-logo.png", alt="")
+    //- a#github.icon(href="http://github.com/ckmah" target="_blank"): img(src="img/github-logo.png", alt="")
+    //- a#resume(href="resume.pdf" target="_blank") Resume
+    a(href="#home")
+    a(href="#about")
+    a(href="#work")
+    a(href="#contact")
+  //- div.container
+  div#home
+    div#home-row
+      div#logo-box(class="col-sm-2 col-xs-12"): img#logo(src="", alt="Clarence Mah")
+      div#home-text(class="col-sm-10 col-xs-12")
         h1#name Clarence Mah
-        div An aspiring bioinformatician enthusiastic about DIY projects and self-directed learning. Also an avid techie and casual musician.
-        br
-        div Here are some #[div.category projects] #[div.category experience]and  #[div.category leadership]I am passionate about.
-    include ../partials/content.jade
+        div#tagline An aspiring bioinformatician enthusiastic about DIY projects and self-directed learning. Also an avid techie and casual musician.
+  #about.row
+    h2 About
+    div#about-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur magni distinctio provident beatae cum tempora quam repellendus ex officia porro illum eos quis, voluptatem dignissimos. Dolorem veritatis sunt corporis consequatur.
+  div#work
+    div#work-carousel(class="carousel slide" data-ride="carousel")
+      - var data = content.elements
+      //- Indicators
+      div.carousel-indicators#carousel-indicators
+        each section, index in data
+          - var klass = (index === 0 ? 'active' : '')
+          li(class=klass data-target="#work-carousel" data-slide-to=index)
+            div= section.title
+
+      //- slide wrapper
+      div.carousel-inner#carousel-inner(role="listbox")
+        each section, index in data
+          +carousel-item(index, section.blocks)
+
+      //- Controls
+      a#carousel-control-left(class="left carousel-control" href="#work-carousel" role="button" data-slide="prev")
+        span(class="icon-prev" aria-hidden="true")
+        span(class="sr-only") Previous
+      a#carousel-control-right(class="right carousel-control" href="#work-carousel" role="button" data-slide="next")
+        span(class="icon-next" aria-hidden="true")
+        span(class="sr-only") Next
+  div#contact
+    div#contact-text Want to chat? Send me an email and we can talk more.
+    a#email-button(href="mailto:clarence.k.mah@gmail.com") clarence.k.mah@gmail.com

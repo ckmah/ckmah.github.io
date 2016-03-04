@@ -16,9 +16,7 @@
  *  limitations under the License
  *
  */
-
 var $CARD = $('#info-card');
-
 
 (function() {
   'use strict';
@@ -73,8 +71,12 @@ var $CARD = $('#info-card');
 function init() {
   'use strict';
   $CARD.hide();
-  particlesJS.load('particles-js', '../particles.json', function() {
-    console.log('callback - particles.js config loaded');
+  $('#work-carousel').carousel({
+    interval: false,
+    keyboard: true
   });
+  // particlesJS.load('particles-js', '../particles.json', function() {
+  //   console.log('callback - particles.js config loaded');
+  // });
 
 }

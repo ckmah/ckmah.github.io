@@ -21,10 +21,10 @@ body {
   position: relative;
 }
 .top {
-  z-index: 3;
+  z-index: 200;
 }
 .middle {
-  z-index: 2;
+  z-index: 100;
 }
 .bottom {
   z-index: 1;
@@ -72,7 +72,7 @@ body {
   line-height: @golden-ratio;
   // -webkit-font-smoothing: antialiased !important;
   font-size: 18px;
-  color: white;
+  // color: white;
 }
 a {
   text-decoration: none !important;
@@ -86,6 +86,7 @@ h5 {
   padding: 0.5em 0;
   margin: 0;
   line-height: 1.3;
+  text-transform: uppercase;
   // -webkit-text-stroke: 0.1px;
   // font-weight: 400;
 }
@@ -108,6 +109,11 @@ h5 {
 /* ==========================================================================
    Less Mixins
    ========================================================================== */
+.v-align {
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+}
 .flex-center-all {
   display: flex;
   justify-content: center;
@@ -115,6 +121,9 @@ h5 {
 }
 .no-padding {
   padding: 0 !important;
+}
+.row {
+  margin: 0;
 }
 .card {
   overflow: hidden;
@@ -179,22 +188,20 @@ h5 {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  filter: blur(1px) contrast(10) saturate(0.8);
+  filter:blur(1px) contrast(10) saturate(0.8);
   animation: myChange 5s 1;
 }
-@keyframes myChange{
-  0%{
-    -webkit-filter:blur(15px) contrast(30) saturate(0.8);
+@keyframes myChange {
+  0% {
+    -webkit-filter: blur(15px) contrast(30) saturate(0.8);
   }
-  50%{
-    -webkit-filter:blur(5px) contrast(20) saturate(0.8);
+  50% {
+    -webkit-filter: blur(5px) contrast(20) saturate(0.8);
   }
-  100%{
-    -webkit-filter:blur(1px) contrast(10) saturate(0.8);
+  100% {
+    -webkit-filter: blur(1px) contrast(10) saturate(0.8);
   }
 }
-@content-min-height: 700px;
-@content-height: 100vh;
 #header {
   .top;
   position: absolute;
@@ -214,7 +221,7 @@ h5 {
   height: 2em;
   width: 2em;
   .card;
-  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.7));
+  filter:drop-shadow(0 1px 3px rgba(0,0,0,0.7));
   background: rgba(0,0,0,0);
   padding: 0.4em;
   margin: 0.5em;
@@ -230,49 +237,114 @@ h5 {
   background: #c92c19;
 }
 /* ==========================================================================
-   Profile styles
+   Home section styles
    ========================================================================== */
-#profile {
+@page-min-height: 700px;
+@page-height: 100vh;
+#home {
   .bottom;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: @content-min-height;
-  height: @content-height;
-  @pic-dim: 220px;
-  #pic {
-    overflow: hidden;
-    min-width: @pic-dim;
-    min-height: @pic-dim;
-    width: @pic-dim;
-    height: @pic-dim;
-    border-radius: 1000px !important;
-    margin: 2em 0;
-    .card-z2;
+  height: @page-height;
+  min-height: @page-min-height;
+  .flex-center-all;
+  #home-row {
+    width: 100%;
+    padding: 4em;
   }
 }
+#logo-box {
+  display: inline-block;
+  overflow: hidden;
+}
+#home-text {
+  display: inline-block;
+  & > div {
+    color: black;
+  }
+}
+/* ==========================================================================
+   About section styles
+   ========================================================================== */
 #about {
-  margin-bottom: 3em;
-}
-#about > div {
-  color: black;
-}
-.category {
-  display: inline;
-  .button-raised;
-  padding: 4px 8px;
-  font-size: 14px;
+  .bottom;
+  padding: 6em 4em;
 }
 /* ==========================================================================
    Content styles
    ========================================================================== */
-#content {
+#work {
   .bottom;
-  .flex-center-all;
-  min-height: @content-min-height;
-  height: @content-height;
-  .no-padding;
+  min-height: @page-min-height;
+  height: @page-height;
+}
+#work-carousel {
+  width: 100%;
+  height: 100vh;
+}
+#carousel-inner {
+  color: black;
+  height: 100%;
+  .item {
+    padding: 3em;
+    height: 100%;
+  }
+  .item-block {
+    margin-bottom: 2em;
+  }
+  .item-info {
+    @media (min-width: @screen-sm-min) {
+      padding-left: 3em;
+    }
+  }
+  .item-img {
+    @media (min-width: @screen-sm-min) {
+      padding-right: 3em;
+    }
+  }
+}
+#carousel-control-left,
+#carousel-control-right {
+  position: absolute;
+  width: 50px;
+  height: 100px;
+  margin: auto 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: black;
+  opacity: 1;
+}
+#carousel-control-right {
+  left: auto;
+  right: 0;
+}
+#carousel-indicators {
+  width: auto;
+  position: inherit;
+  left: 0;
+  bottom: auto;
+  left: 0;
+  margin: auto 0;
+  .active {
+    background: white;
+    font-weight: 600;
+  }
+  li {
+    text-indent: 0;
+    width: auto;
+    height: auto;
+    text-transform: uppercase;
+    border-radius: 0;
+    transform: skew(-20deg);
+    border: 0;
+    padding: 0.7em 1.5em;
+    & > div {
+      font-family: 'raleway';
+      font-size: 22px;
+      width: 100%;
+      height: 100%;
+      transform: skew(20deg);
+    }
+  }
 }
 @block-dim: 150px;
 @block-margin: 8px;
@@ -344,85 +416,23 @@ h5 {
   }
 }
 /* ==========================================================================
-   Card styles
+   Contact section styles
    ========================================================================== */
-#info-card {
-  position: absolute;
-  .middle;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  padding: 0;
-  align-items: center;
-  justify-content: center;
-}
-#info-wrapper {
-  display: flex;
-  position: relative;
+#contact {
+  padding: 6em 2em;
+  .flex-center-all;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  background: white;
-  .card-z1;
 }
-#info-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 1em;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-  text-shadow: 0 0 5px rgba(0,0,50,0.36), 0 0 3px rgba(0,0,50,0.60);
-  &:hover {
-    transform: rotate(90deg);
-  }
+#contact-text {
+  margin: 2em;
 }
-@description-height: 250px;
-#info-header {
-  position: relative;
-  height: @description-height*@golden-ratio;
-  width: 100%;
-  background: linear-gradient(@tertiary-color, @quaternary-color);
-  #info-pic {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  #title {
-    .raised-text;
-    .raised-box;
-    position: absolute;
-    bottom: 0;
-    margin: 1em 1em 1em 0;
-    padding: 0.5em 1em;
-    background: @quaternary-color;
-  }
-}
-#info-description {
-  height: @description-height;
-  width: 100%;
-  padding: 1.5em;
-  overflow-y: auto;
-  background: #DDD;
-  #category,
-  .tag {
-    .button-raised;
-    display: inline-flex;
-    white-space: nowrap;
-    font-size: 14px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-  }
-  #description {
-    margin-top: 1em;
-    color: black;
-  }
+#email-button {
+  border: 5px solid red;
+  text-align: center;
+  padding: 0.5em 1em;
+  vertical-align: middle;
+  color: red;
+  text-transform: uppercase;
 }
 /* ==========================================================================
    Browse Happy prompt

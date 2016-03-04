@@ -1,6 +1,16 @@
-mixin content-block(name, category, tags, description, thumbnail, image)
-  div(class="content-block #{category}" data-title=name data-category=category data-tags=tags data-description=description data-image=image)
-    div.block-bg(style="background: #{thumbnail}")
-    div.block-overlay
-      h3#name= name
-      h5#category= category
+//- <div class="item active">
+//- |       <img src="" alt="">
+//- |       <div class="carousel-caption">
+//- |         One
+//- |       </div>
+//- </div>
+
+mixin carousel-item(index, blocks)
+  - var klass = (index === 0 ? 'item active' : 'item')
+  div(class=klass)
+    for block, index in blocks
+      div.item-block.col-xs-12
+        div.item-info.col-sm-6
+          h4= block.title
+          div= block.description
+        img.item-img.col-sm-6(src="#{block.image}")

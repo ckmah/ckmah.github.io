@@ -5,8 +5,5 @@
 - var lead = 'Leadership'
 - var blockData = content.elements
 
-div#content
-  include ../partials/infocard.jade
-  div#content-box
-    each block in blockData
-      +content-block(block.title, block.category, block.tags, block.description, block.thumbnail, block.image)
+each block in blockData
+  +carousel-item(block.title, block.category, block.tags, block.description, block.thumbnail, block.image)

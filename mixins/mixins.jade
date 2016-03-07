@@ -11,6 +11,6 @@ mixin carousel-item(index, blocks)
     for block, index in blocks
       div.item-block.col-xs-12
         div.item-info.col-sm-6
-          h4= block.title
-          div= block.description
+          h3= block.title
+          div!= block.description
         img.item-img.col-sm-6(src="#{block.image}")

@@ -7,31 +7,47 @@ block title
 
 console.log(blockData)
 block body
-  div#particles-js
-  div#header
+  //- div#particles-js
+  nav#navbar(class="navbar navbar-default navbar-static-top")
+    div.navbar-header
+      button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-div" aria-expanded="false")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+    div(class="collapse navbar-collapse" id="collapse-div")
+      ul#nav(class="nav navbar-nav")
+        li.active: a(href="#home") Home
+        li: a(href="#about") About
+        li: a(href="#work") Work
+        li: a(href="#contact") Contact
+
     //- a#email.icon(href="mailto:clarence.k.mah@gmail.com"): img(src="img/email-logo.png", alt="")
     //- a#linkedin.icon(href="http://linkedin.com/in/clarencemah" target="_blank"): img(src="img/linkedin-logo.png", alt="")
     //- a#github.icon(href="http://github.com/ckmah" target="_blank"): img(src="img/github-logo.png", alt="")
     //- a#resume(href="resume.pdf" target="_blank") Resume
-    a(href="#home")
-    a(href="#about")
-    a(href="#work")
-    a(href="#contact")
-  //- div.container
+    //- a(href="#home")
+    //- a(href="#about")
+    //- a(href="#work")
+    //- a(href="#contact")
+    //- div.container
   div#home
     div#home-row
-      div#logo-box(class="col-sm-2 col-xs-12"): img#logo(src="", alt="Clarence Mah")
-      div#home-text(class="col-sm-10 col-xs-12")
+      div#logo-box(class=""): img#logo(src="img/face.jpg", alt="Clarence Mah")
+      div#home-text(class="")
         h1#name Clarence Mah
-        div#tagline An aspiring bioinformatician enthusiastic about DIY projects and self-directed learning. Also an avid techie and casual musician.
-  #about.row
-    h2 About
-    div#about-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur magni distinctio provident beatae cum tempora quam repellendus ex officia porro illum eos quis, voluptatem dignissimos. Dolorem veritatis sunt corporis consequatur.
+        div#tagline= content.tagline
+  #about
+    div.container
+      h2 About
+      div#about-text= content.about
   div#work
     div#work-carousel(class="carousel slide" data-ride="carousel")
       - var data = content.elements
       //- Indicators
-      div.carousel-indicators#carousel-indicators
+      div#carousel-indicators(class="carousel-indicators" data-spy="affix")
         each section, index in data
           - var klass = (index === 0 ? 'active' : '')
           li(class=klass data-target="#work-carousel" data-slide-to=index)
@@ -50,5 +66,9 @@ block body
         span(class="icon-next" aria-hidden="true")
         span(class="sr-only") Next
   div#contact
-    div#contact-text Want to chat? Send me an email and we can talk more.
+    div#contact-text= content.contact_text
     a#email-button(href="mailto:clarence.k.mah@gmail.com") clarence.k.mah@gmail.com
+    div#links
+      a(href="http://github.com/ckmah", target="_blank"): img(src="img/github-logo.png", alt="github")
+      a(href="http://linkedin.com/in/clarencemah", target="_blank"): img(src="img/linkedin-logo.png", alt="linkedin")
+      //- a(href="http://", target="_blank") link

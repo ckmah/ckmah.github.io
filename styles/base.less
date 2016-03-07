@@ -15,6 +15,7 @@ body {
   background-color: @quaternary-color;
   background: linear-gradient(30deg, #E0E0E0, #E0E0E0);
   padding: 0;
+  position: relative;
 }
 .container {
   .no-padding;
@@ -33,26 +34,8 @@ body {
    Font styling
    ========================================================================== */
 @font-face {
-  font-family: 'aovel-sans';
-  src: url('../fonts/asansreg-webfont.eot');
-  src: url('../fonts/asansreg-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/asansreg-webfont.woff') format('woff'), url('../fonts/asansreg-webfont.ttf') format('truetype'), url('../fonts/asansreg-webfont.svg#webfont') format('svg');
-}
-@font-face {
-  font-family: 'fira-sans';
-  src: url('../fonts/firasans-light-webfont.eot');
-  src: url('../fonts/firasans-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-light-webfont.woff') format('woff'), url('../fonts/firasans-light-webfont.ttf') format('truetype'), url('../fonts/firasans-light-webfont.svg#webfont') format('svg');
-}
-@font-face {
-  font-family: 'kelson';
-  src: url('../fonts/Kelson Sans Light.otf');
-}
-@font-face {
-  font-family: 'fabrica';
-  src: url('../fonts/Fabrica.otf');
-}
-@font-face {
-  font-family: 'dekar';
-  src: url('../fonts/Dekar.otf');
+  font-family: 'deja-vu-sans-mono';
+  src: url('../fonts/DejaVuSans-Mono.ttf');
 }
 @font-face {
   font-family: 'titillium';
@@ -71,7 +54,7 @@ body {
   font-family: 'titillium', Arial, "Lucida Grande", sans-serif;
   line-height: @golden-ratio;
   // -webkit-font-smoothing: antialiased !important;
-  font-size: 18px;
+  font-size: 16px;
   // color: white;
 }
 a {
@@ -83,7 +66,7 @@ h3,
 h4,
 h5 {
   font-family: 'raleway', Arial, "Lucida Grande", sans-serif;
-  padding: 0.5em 0;
+  padding: 0.3em 0;
   margin: 0;
   line-height: 1.3;
   text-transform: uppercase;
@@ -91,17 +74,20 @@ h5 {
   // font-weight: 400;
 }
 h1 {
-  font-size: 48px;
+  font-size: 56px;
   .raised-text;
+  @media only screen and (min-width: @screen-md-min) {
+    font-size: 74px;
+  }
 }
 h2 {
   font-size: 32px;
 }
 h3 {
-  font-size: 18px;
+  font-size: 24px;
 }
 h4 {
-  font-size: 26px;
+  font-size: 18px;
 }
 h5 {
   font-size: 12px;
@@ -189,35 +175,37 @@ h5 {
   height: 100%;
   overflow: hidden;
   filter:blur(1px) contrast(10) saturate(0.8);
-  animation: myChange 5s 1;
 }
-@keyframes myChange {
-  0% {
-    -webkit-filter: blur(15px) contrast(30) saturate(0.8);
-  }
-  50% {
-    -webkit-filter: blur(5px) contrast(20) saturate(0.8);
-  }
-  100% {
-    -webkit-filter: blur(1px) contrast(10) saturate(0.8);
-  }
+#navbar {
+  .middle;
+  background: transparent;
+  border: none;
 }
-#header {
-  .top;
-  position: absolute;
-  right: 0;
-  margin: 1em;
+#nav {
+  .flex-center-all;
+  @media only screen and (min-width: @screen-sm-min) {
+    float: right;
+  }
+  li {
+    display: inline-block;
+    background: white;
+    @media only screen and (min-width: @screen-sm-min) {
+      background: transparent;
+    }
+  }
+  .active a {
+    background: transparent;
+    font-weight: 600;
+  }
 }
 #resume {
   .button-raised;
   margin-left: 0.5em;
-  // background-color: green !important;
 }
 .icon {
   display: inline;
 }
 .icon img {
-  // .card;
   height: 2em;
   width: 2em;
   .card;
@@ -239,7 +227,7 @@ h5 {
 /* ==========================================================================
    Home section styles
    ========================================================================== */
-@page-min-height: 700px;
+@page-min-height: 500px;
 @page-height: 100vh;
 #home {
   .bottom;
@@ -248,17 +236,112 @@ h5 {
   .flex-center-all;
   #home-row {
     width: 100%;
-    padding: 4em;
+    text-align: center;
   }
 }
 #logo-box {
-  display: inline-block;
+  text-align: center;
+}
+#logo {
+  height: 250px;
+  width: 250px;
+  border-radius: 250px;
   overflow: hidden;
+}
+#name {
+  padding-bottom: 0.2em;
 }
 #home-text {
   display: inline-block;
-  & > div {
+  #tagline {
+    display: inline-block;
+    padding-left: 0.2em;
+    font-family: 'deja-vu-sans-mono';
     color: black;
+  }
+}
+/* ==========================================================================
+   Animations (enabled for md+ screens)
+   ========================================================================== */
+/* animation outline
+   icon - appear, slide left
+   text - appear,
+ */
+@media only screen and (min-width: @screen-md-min) {
+  @fade-time: 0.8s;
+  @slide-time: 0.5s;
+  @type-time: 3s;
+  @slide-delay: @fade-time - 0.2s;
+  @name-delay: @slide-delay + @slide-time;
+  @type-delay: @name-delay + @fade-time - 0.2s;
+  @caret-delay: @type-delay + @type-time;
+  #home-row {
+    .flex-center-all;
+    align-content: space-around;
+  }
+  #name {
+    white-space: nowrap;
+  }
+  #logo-box {
+    display: inline-block;
+    margin-left: 500px;
+    animation: fadeIn @fade-time ease-in-out, slideLeft @slide-time ease-in-out @slide-delay;
+    animation-fill-mode: forwards;
+  }
+  #home-text {
+    opacity: 0;
+    padding: 0 4em;
+    animation: fadeIn @fade-time ease @name-delay;
+    animation-fill-mode: forwards;
+  }
+  #tagline {
+    .type-content(60);
+  }
+  @keyframes fadeIn {
+    from {
+      display: none;
+      opacity: 0;
+    }
+    to {
+      display: inline-block;
+      opacity: 1;
+    }
+  }
+  @keyframes slideLeft {
+    from {
+      margin-left: 500px;
+    }
+    to {
+      margin-left: 0;
+    }
+  }
+  .type-content(@numCh) {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: black 0.1em solid;
+    animation: type @type-time steps(@numCh) @type-delay, blink-caret 1s linear infinite @caret-delay;
+    animation-fill-mode: forwards;
+    @keyframes type {
+      from {
+        width: 0;
+      }
+      to {
+        width: @numCh*1ch;
+      }
+    }
+    @keyframes blink-caret {
+      17% {
+        border-color: black;
+      }
+      33%,
+      67% {
+        border-color: transparent;
+      }
+      83% {
+        border-color: black;
+      }
+    }
   }
 }
 /* ==========================================================================
@@ -284,20 +367,28 @@ h5 {
   color: black;
   height: 100%;
   .item {
-    padding: 3em;
+    padding: 6em 3em 3em;
     height: 100%;
+    overflow-y: auto;
   }
   .item-block {
-    margin-bottom: 2em;
+    margin: 4em 0;
   }
+  @padding-outer: 10%;
+  @padding-inner: 5%;
   .item-info {
-    @media (min-width: @screen-sm-min) {
-      padding-left: 3em;
+    @media (min-width: @screen-md-min) {
+      padding-left: @padding-outer;
+      padding-right: @padding-inner;
+    }
+    h3 {
+      padding-bottom: 0.8em;
     }
   }
   .item-img {
-    @media (min-width: @screen-sm-min) {
-      padding-right: 3em;
+    @media (min-width: @screen-md-min) {
+      padding-right: @padding-outer;
+      padding-left: @padding-inner;
     }
   }
 }
@@ -318,31 +409,40 @@ h5 {
   right: 0;
 }
 #carousel-indicators {
-  width: auto;
-  position: inherit;
-  left: 0;
+  .top;
+  top: 0;
   bottom: auto;
+  width: 100%;
+  margin: 0;
   left: 0;
-  margin: auto 0;
+  .flex-center-all;
+  align-content: space-around;
+  background: black;
   .active {
     background: white;
+    color: black;
     font-weight: 600;
   }
   li {
+    font-family: 'raleway';
     text-indent: 0;
     width: auto;
     height: auto;
     text-transform: uppercase;
     border-radius: 0;
-    transform: skew(-20deg);
     border: 0;
     padding: 0.7em 1.5em;
+    transform: skew(-20deg);
+    color: white;
     & > div {
-      font-family: 'raleway';
-      font-size: 22px;
       width: 100%;
       height: 100%;
       transform: skew(20deg);
+    }
+  }
+  @media only screen and (min-width: @screen-md-min) {
+    li > div {
+      font-size: 22px;
     }
   }
 }
@@ -433,6 +533,34 @@ h5 {
   vertical-align: middle;
   color: red;
   text-transform: uppercase;
+  transition: transform 0.1s;
+  &:hover {
+    transform: scale(1.05) translateY(-.1em);
+  }
+  &:active {
+    transform: scale(1.05) translateY(.1em);
+  }
+}
+#links {
+  padding: 4em;
+  .flex-center-all;
+  a {
+    margin: 0.5em;
+    overflow: hidden;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background: #DDD;
+    transition: background 0.1s;
+    &:hover {
+      background: black;
+    }
+  }
+  img {
+    height: 50px;
+    width: 50px;
+    padding: 0.8em;
+  }
 }
 /* ==========================================================================
    Browse Happy prompt

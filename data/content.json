@@ -1,18 +1,21 @@
 {
+  "tagline": "Aspiring bioinformatician, avid techie, and casual musician.",
+  "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur magni distinctio provident beatae cum tempora quam repellendus ex officia porro illum eos quis, voluptatem dignissimos. Dolorem veritatis sunt corporis consequatur.",
+  "contact_text": "Want to chat? Send me an email and I'll get in touch.",
   "elements": [{
     "title": "Experience",
     "blocks": [{
       "title": "Peroxisome Gene Regulation Analysis",
       "category": "experience",
       "tags": ["research", "motif analysis", "functional enrichment"],
-      "description": "I performed DNA motif enrichment anlaysis in collaboration with postdoctoral researchers using Next Generation Sequencing (NGS) bioinformatics tools. I researched CRISPR-Cas system design of guide RNAs for gene-knockout experiments.",
+      "description": "I performed DNA motif enrichment anlaysis in collaboration with postdoctoral researchers using Next Generation Sequencing (NGS) bioinformatics tools. A set of neurdegenerative diseases including Zellweger's syndrome, neonatal adrenoleukodystrophy, and infantile Refsum disease are due to loss of or defective peroxisome function. The goal was to potentially find a master regulatory controller of peroxisome genes. I also had the opportunity to research the CRISPR-Cas9 system and design guide RNAs for gene-knockout experiments.",
       "thumbnail": "url(../img/cell_thumbnail.png)",
       "image": "url(../img/peroxisome_poster.png)"
     }, {
       "title": "Speech & Brain Machine Interfaces",
       "category": "experience",
       "tags": ["translational research", "matlab", "python"],
-      "description": "The goal of this research is to open the door to neural prostheses for speech. I assisted in creating a behavioral study to design an experimental framework to study correlations in speech and ECoG data. I also prototyped a visual interface for the neurally controlled speech prosthesis.",
+      "description": "As a undergraduate researcher in the <a href=\"http://neuro.eng.ucsd.edu/\" target=\"_blank\">Translational NeuroEngineering Lab</a>, I worked on Brain Machine Interfaces (BMI) under Dr. Vikash Gilja. I assisted in creating a behavioral study to design an experimental framework to study correlations in speech and ECoG data. I also prototyped visual interfaces for those experiments, which were deployed in collaboration with UCSF to study patients in the Neurointensive Care Unit.",
       "thumbnail": "url(../img/brain_thumbnail.png)",
       "image": "url(../img/speech-prosthesis.png)"
     }]
@@ -22,7 +25,7 @@
       "title": "DangoReader",
       "category": "projects",
       "tags": ["android", "java", "web-dev"],
-      "description": "An Android application created for users to browse, read, and maintain a personal library of Japanese comics called Manga. I was the lead Android developer, responsible for designing the user interface and implementing JSON to database mapping. I also developed the landing page for app distribution.",
+      "description": "An Android application I created for readers to browse, read, and maintain a personal library of Japanese comics called Manga. I was the lead Android developer, responsible for designing the user interface and implementing models for interfacing JSON to a local database. I also developed a landing page for app distribution.",
       "thumbnail": "url(../img/phone_thumbnail.png)",
       "image": "url(../img/dango.png)"
     }, {
@@ -53,7 +56,7 @@
       "title": "Webmaster: BMES",
       "category": "leadership",
       "tags": ["web development"],
-      "description": "I redesigned the website for the Biomedical Engineering Society at UC San Diego to facilitate better communication and accessibility for club members and prospective industry sponsors.",
+      "description": "I redesigned and maintain the website for the Biomedical Engineering Society at UC San Diego to facilitate better communication and accessibility for club members and prospective industry sponsors.",
       "thumbnail": "url(../img/bmes_thumbnail.png)",
       "image": "url(../img/bmes_website.jpg)"
     }, {

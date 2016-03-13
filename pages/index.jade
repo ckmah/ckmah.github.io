@@ -8,7 +8,7 @@ block title
 console.log(blockData)
 block body
   //- div#particles-js
-  nav#navbar(class="navbar navbar-default navbar-static-top")
+  nav#navbar(class="navbar navbar-default navbar-fixed-top")
     div.navbar-header
       button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-div" aria-expanded="false")
         span.sr-only Toggle navigation
@@ -39,34 +39,36 @@ block body
       div#home-text(class="")
         h1#name Clarence Mah
         div#tagline= content.tagline
+    a.glyphicon.glyphicon-chevron-down#learn-more(href="#about")
   #about
     div.container
       h2 About
       div#about-text= content.about
+      div#interests.row
+        h3 Current Interests
+        div#interest-list.row
+          each link, topic in content.interests
+            div.interest
+              img(src="#{link}", alt="#{topic}")
+              h4= topic
+      div
+        h3 Education
+        div#edu-content
+          img#edu-seal(src="img/ucsd_seal.png")
+          p University of California, San Diego
+          p.right 2012 - 2016
+          br
+          p Bioengineering: Bioinformatics, B.S.
+          p.right La Jolla, CA
   div#work
-    div#work-carousel(class="carousel slide" data-ride="carousel")
-      - var data = content.elements
-      //- Indicators
-      div#carousel-indicators(class="carousel-indicators" data-spy="affix")
-        each section, index in data
-          - var klass = (index === 0 ? 'active' : '')
-          li(class=klass data-target="#work-carousel" data-slide-to=index)
-            div= section.title
-
-      //- slide wrapper
-      div.carousel-inner#carousel-inner(role="listbox")
+    div.container
+      h2 Portfolio
+      div#work-content
+        - var data = content.elements
         each section, index in data
           +carousel-item(index, section.blocks)
-
-      //- Controls
-      a#carousel-control-left(class="left carousel-control" href="#work-carousel" role="button" data-slide="prev")
-        span(class="icon-prev" aria-hidden="true")
-        span(class="sr-only") Previous
-      a#carousel-control-right(class="right carousel-control" href="#work-carousel" role="button" data-slide="next")
-        span(class="icon-next" aria-hidden="true")
-        span(class="sr-only") Next
-  div#contact
-    div#contact-text= content.contact_text
+  footer#contact
+    p#contact-text= content.contact_text
     a#email-button(href="mailto:clarence.k.mah@gmail.com") clarence.k.mah@gmail.com
     div#links
       a(href="http://github.com/ckmah", target="_blank"): img(src="img/github-logo.png", alt="github")

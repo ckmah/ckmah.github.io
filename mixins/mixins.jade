@@ -6,11 +6,25 @@
 //- </div>
 
 mixin carousel-item(index, blocks)
-  - var klass = (index === 0 ? 'item active' : 'item')
-  div(class=klass)
-    for block, index in blocks
-      div.item-block.col-xs-12
-        div.item-info.col-sm-6
-          h3= block.title
-          div!= block.description
-        img.item-img.col-sm-6(src="#{block.image}")
+  //- - var klass = (index === 0 ? 'item active' : 'item')
+  //- div(class=klass)
+  for block, index in blocks
+    div.item-block.col-md-6.col-lg-4
+      //- if index % 2 == 1
+      //-   +item-img(block.image)
+      +item-img(block.image)
+      div.item-info
+        h3= block.title
+        div#tags
+          for tag in block.tags
+            div.tag= tag
+        div.item-text!= block.description
+        a.see-more(href="#{block.link}" target="_blank")
+          div.see-more-text See More
+          div.arrow-box: div#see-more-arrow(class="glyphicon glyphicon-chevron-right")
+        //- if index % 2 == 0
+        //-   +item-img(block.image)
+
+mixin item-img(image)
+  div.item-img-container
+    img.item-img(style="background-image: url(#{image})")

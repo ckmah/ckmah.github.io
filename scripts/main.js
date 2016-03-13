@@ -20,16 +20,14 @@
 (function() {
   'use strict';
   $('a').smoothScroll();
-  $('#carousel-indicators').affix({
-    offset: {
-      top: $('#carousel-indicators').offset().top
+  $(window).scroll(function() {
+    var $navbar = $('#navbar');
+    if ($navbar.offset().top > $(window).height()) {
+      $navbar.addClass('scrolled-nav');
+    } else {
+      $navbar.removeClass('scrolled-nav');
     }
   });
-  $('#work-carousel').carousel({
-    interval: false,
-    keyboard: true
-  });
-
 })();
 
 // particlesJS.load('particles-js', '../particles.json', function() {

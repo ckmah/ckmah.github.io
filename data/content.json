@@ -1,71 +1,76 @@
 {
   "tagline": "Aspiring bioinformatician, avid techie, and casual musician.",
-  "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur magni distinctio provident beatae cum tempora quam repellendus ex officia porro illum eos quis, voluptatem dignissimos. Dolorem veritatis sunt corporis consequatur.",
+  "about": "As a soon to be college graduate, I am eager to begin my journey to leave my mark on the world. I wish to harness my curiosity for biology and data science to help realize a future in personalized medicine.",
+  "interests": {
+    "Bioinformatics": "../img/circos-conde-nast-large.png",
+    "Web-Dev": "../img/aciano-net-web-dev.png",
+    "Android-Dev": "../img/google_android.png"
+  },
   "contact_text": "Want to chat? Send me an email and I'll get in touch.",
   "elements": [{
     "title": "Experience",
     "blocks": [{
       "title": "Peroxisome Gene Regulation Analysis",
-      "category": "experience",
-      "tags": ["research", "motif analysis", "functional enrichment"],
-      "description": "I performed DNA motif enrichment anlaysis in collaboration with postdoctoral researchers using Next Generation Sequencing (NGS) bioinformatics tools. A set of neurdegenerative diseases including Zellweger's syndrome, neonatal adrenoleukodystrophy, and infantile Refsum disease are due to loss of or defective peroxisome function. The goal was to potentially find a master regulatory controller of peroxisome genes. I also had the opportunity to research the CRISPR-Cas9 system and design guide RNAs for gene-knockout experiments.",
+      "tags": ["NGS", "scripting", "HPC clusters"],
+      "description": "I performed DNA motif enrichment anlaysis in collaboration with postdoctoral researchers using Next Generation Sequencing (NGS) bioinformatics tools. A subset of neuro-degenerative diseases are due to loss of or defective peroxisome function. The goal was to find a potential master regulatory controller of peroxisome genes. I also had the opportunity to research the CRISPR-Cas9 system and design guide RNAs for gene-knockout experiments.",
+      "link": "peroxisome-poster.pdf",
       "thumbnail": "url(../img/cell_thumbnail.png)",
-      "image": "url(../img/peroxisome_poster.png)"
+      "image": "../img/peroxisome_poster.png"
     }, {
       "title": "Speech & Brain Machine Interfaces",
-      "category": "experience",
-      "tags": ["translational research", "matlab", "python"],
-      "description": "As a undergraduate researcher in the <a href=\"http://neuro.eng.ucsd.edu/\" target=\"_blank\">Translational NeuroEngineering Lab</a>, I worked on Brain Machine Interfaces (BMI) under Dr. Vikash Gilja. I assisted in creating a behavioral study to design an experimental framework to study correlations in speech and ECoG data. I also prototyped visual interfaces for those experiments, which were deployed in collaboration with UCSF to study patients in the Neurointensive Care Unit.",
+      "tags": ["matlab", "python", "linux"],
+      "description": "As an undergraduate researcher in the <a href=\"http://neuro.eng.ucsd.edu/\" target=\"_blank\">Translational NeuroEngineering Lab</a>, I worked on Brain Machine Interfaces (BMI) under Dr. Vikash Gilja. I assisted in creating a behavioral study to design an experimental framework to study correlations in speech and ECoG data. I also prototyped visual interfaces for those experiments, which were deployed in collaboration with UCSF to study patients in the Neurointensive Care Unit.",
+      "link": "http://neuro.eng.ucsd.edu/",
       "thumbnail": "url(../img/brain_thumbnail.png)",
-      "image": "url(../img/speech-prosthesis.png)"
+      "image": "../img/speech-prosthesis.png"
     }]
   }, {
     "title": "Projects",
     "blocks": [{
       "title": "DangoReader",
-      "category": "projects",
-      "tags": ["android", "java", "web-dev"],
+      "tags": ["android", "java", "web-dev", "git"],
       "description": "An Android application I created for readers to browse, read, and maintain a personal library of Japanese comics called Manga. I was the lead Android developer, responsible for designing the user interface and implementing models for interfacing JSON to a local database. I also developed a landing page for app distribution.",
+      "link": "http://www.dangoreader.moe/",
       "thumbnail": "url(../img/phone_thumbnail.png)",
-      "image": "url(../img/dango.png)"
+      "image": "../img/dango.png"
     }, {
       "title": "Molecular Sequence Analysis",
-      "category": "projects",
-      "tags": ["bioinformatics", "python", "algorithms"],
-      "description": "Application of computer science and novel algorithms to molecular sequence analysis. Some of the core genomic algorithsm I learned and implemented include algorithms for sequence alignment, assembly, rearrangement, and variants. Extensive scripting in Python.",
+      "tags": ["bioinformatics", "python", "scripting"],
+      "description": "This was a course that applied both classic and novel computer science algorithms to molecular sequence analysis. Some of the core genomic algorithsm I learned and implemented include algorithms for sequence alignment, assembly, rearrangement, and variants. Some algorithms include Eulerian paths and cycles, Burrows-Wheeler transform, and soft K-means clustering, all scripted in Python.",
+      "link": "http://rosalind.info/problems/list-view/?location=bioinformatics-textbook-track",
       "thumbnail": "url(../img/rosalind_thumbnail.png)",
-      "image": "url(../img/rosalind.png)"
+      "image": "../img/binf.jpg"
     }]
   }, {
     "title": "Leadership",
     "blocks": [{
       "title": "Project Team Lead: BMES",
-      "category": "leadership",
       "tags": ["event planning", "project management"],
-      "description": "I was charged with creating a research program for undergraduates and engineering project teams by providing resources such as advising, funding, recruitment, and lab space. I successfully generated 15 undergraduate research positions and sponsored 3 student teams to compete in national engineering competitions.",
+      "description": "I was responsible for creating a research program for undergraduates and engineering project teams by providing resources such as advising, funding, recruitment, and lab space. I successfully generated 15 undergraduate research positions and sponsored 3 student teams to compete in national engineering competitions by recruiting research labs to sponsor undergraduate team projects.",
+      "link": "",
       "thumbnail": "url(../img/project-team_thumbnail.jpg)",
-      "image": "url(../img/project-team.jpg)"
+      "image": "../img/project-team.jpg"
     }, {
       "title": "Internal Vice President: UBIC",
-      "category": "leadership",
       "tags": ["bioinformatics", "event planning"],
-      "description": "As internal Vice President of the Undergraduate Bioinformatics Club (UBIC) at UC San Deigo, I coordinated a board of 8 officers to plan wide variety of events, from workshops to panels to industry networking events.",
+      "description": "As internal Vice President of the Undergraduate Bioinformatics Club (UBIC) at UC San Deigo, I coordinated a board of 8 officers to plan a wide variety of events, from workshops to panels to industry networking events. I planned with the club's future in mind by creating guides for event planning and establishing relationships with departments and related faculty.",
+      "link": "http://ubic.ucsd.edu/",
       "thumbnail": "url(../img/ubic_thumbnail.png)",
-      "image": "url(../img/ubic.png)"
+      "image": "../img/ubic.jpg"
     }, {
       "title": "Webmaster: BMES",
-      "category": "leadership",
-      "tags": ["web development"],
-      "description": "I redesigned and maintain the website for the Biomedical Engineering Society at UC San Diego to facilitate better communication and accessibility for club members and prospective industry sponsors.",
+      "tags": ["html5", "css3", "javascript", "bootstrap"],
+      "description": "I redesigned and maintain the website for the Biomedical Engineering Society at UC San Diego to facilitate better communication and accessibility for club members and prospective industry sponsors. Some tools used include Gulp, Bootstrap, Less, and jQuery.",
+      "link": "http://bmes.ucsd.edu/",
       "thumbnail": "url(../img/bmes_thumbnail.png)",
-      "image": "url(../img/bmes_website.jpg)"
+      "image": "../img/bmes_website.jpg"
     }, {
       "title": "NAE: Video Contest",
-      "category": "leadership",
       "tags": [],
       "description": "I led a team of students to create a video for the National Academy of Engineering's 50th Anniversary Video Contest ot promote innovations in engineering from the past, present, and future. We were the winners of the People's Choice Award for a prize of $5,000.",
+      "link": "https://www.youtube.com/watch?v=9v1JmsR5tlM",
       "thumbnail": "url(../img/nae-video.jpg)",
-      "image": "url(../img/nae-video.jpg)"
+      "image": "../img/nae-video.jpg"
     }]
   }]
 }

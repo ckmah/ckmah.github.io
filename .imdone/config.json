@@ -34,11 +34,11 @@
       "hidden": true
     },
     {
-      "name": "Todo",
+      "name": "TODO",
       "hidden": false
     },
     {
-      "name": "Done",
+      "name": "DONE",
       "hidden": false
     }
   ],

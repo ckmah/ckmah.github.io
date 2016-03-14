@@ -3,6 +3,7 @@
   "about": "As a soon to be college graduate, I am eager to begin my journey to leave my mark on the world. I wish to harness my curiosity for biology and data science to help realize a future in personalized medicine.",
   "interests": {
     "Bioinformatics": "../img/circos-conde-nast-large.png",
+    "Machine Learning": "../img/plants-and-machines-ml.png",
     "Web-Dev": "../img/aciano-net-web-dev.png",
     "Android-Dev": "../img/google_android.png"
   },
@@ -22,7 +23,7 @@
       "description": "As an undergraduate researcher in the <a href=\"http://neuro.eng.ucsd.edu/\" target=\"_blank\">Translational NeuroEngineering Lab</a>, I worked on Brain Machine Interfaces (BMI) under Dr. Vikash Gilja. I assisted in creating a behavioral study to design an experimental framework to study correlations in speech and ECoG data. I also prototyped visual interfaces for those experiments, which were deployed in collaboration with UCSF to study patients in the Neurointensive Care Unit.",
       "link": "http://neuro.eng.ucsd.edu/",
       "thumbnail": "url(../img/brain_thumbnail.png)",
-      "image": "../img/speech-prosthesis.png"
+      "image": "../img/brain-neuro.png"
     }]
   }, {
     "title": "Projects",

@@ -2,12 +2,10 @@
 /* ==========================================================================
    Color styles
    ========================================================================== */
-@primary-color: #EEE;
-@secondary-color: #8fabb5;
-@tertiary-color: #326f89;
-@quaternary-color: #154456;
-@accent-color: #fff25c;
+@primary-color: @red-500;
+@secondary-color: white;
 @blue-grey-900: #263238;
+@blue-grey-700: #455a64;
 @blue-grey-500: #607D8B;
 @blue-grey-300: #90A4AE;
 @red-500: #d32f2f;
@@ -20,8 +18,6 @@
    ========================================================================== */
 html,
 body {
-  background-color: @quaternary-color;
-  background: linear-gradient(30deg, #E0E0E0, #E0E0E0);
   padding: 0;
   position: relative;
 }
@@ -80,6 +76,7 @@ body {
 }
 a {
   text-decoration: none !important;
+  color: #add8e6;
 }
 p {
   font-size: @p-size;
@@ -172,31 +169,6 @@ h5 {
   .card;
   box-shadow: 0 19px 38px rgba(0,0,0,0.4), 0 15px 12px rgba(0,0,0,0.32) !important;
 }
-.card-raised {
-  .card-z1;
-  transition: all 0.1s ease-in-out;
-  &:active {
-    .card-z2;
-  }
-}
-.button-raised {
-  .card-raised;
-  padding: 6px 12px;
-  background: @tertiary-color;
-  color: white;
-  border-radius: 2px;
-  margin-right: 8px;
-  font-family: 'monospace';
-  text-transform: uppercase;
-  cursor: pointer;
-  &:hover {
-    background: lighten(@accent-color, 10%);
-    color: @quaternary-color;
-  }
-  &:active {
-    transform: scale(0.95);
-  }
-}
 /* ==========================================================================
    Element styles
    ========================================================================== */
@@ -242,23 +214,6 @@ h5 {
     font-weight: 600;
   }
 }
-#resume {
-  .button-raised;
-  margin-left: 0.5em;
-}
-.icon {
-  display: inline;
-}
-.icon img {
-  height: 2em;
-  width: 2em;
-  .card;
-  filter:drop-shadow(0 1px 3px rgba(0,0,0,0.7));
-  background: rgba(0,0,0,0);
-  padding: 0.4em;
-  margin: 0.5em;
-  transition: background 0.2s ease-in-out;
-}
 #github:hover img {
   background: #222;
 }
@@ -280,6 +235,7 @@ h5 {
   height: @page-height;
   min-height: @page-min-height;
   background-color: @grey-900;
+  overflow: hidden;
   .flex-center-all;
   #home-row {
     width: 100%;
@@ -293,6 +249,21 @@ h5 {
     bottom: 0;
     margin-bottom: 2em;
     text-align: center;
+    a {
+      display: inline-block;
+      height: 2em;
+      width: 2em;
+      font-size: 24px;
+      color: @red-500;
+      background-color: white;
+      border-radius: 10em;
+      line-height: 1.7em;
+      transition: all 0.2s;
+      &:hover {
+        color: white;
+        background-color: @red-500;
+      }
+    }
   }
 }
 #logo-box {
@@ -353,6 +324,11 @@ h5 {
   #tagline {
     .type-content(60);
   }
+  #learn-more {
+    opacity: 0;
+    animation: fadeIn @fade-time ease @caret-delay;
+    animation-fill-mode: forwards;
+  }
   @keyframes fadeIn {
     from {
       display: none;
@@ -408,7 +384,7 @@ h5 {
 #about {
   .bottom;
   padding: 3em 0;
-  background-color: @blue-grey-300;
+  background-color: @blue-grey-500;
   .container {
     padding: 0 @about-side-space;
   }
@@ -430,12 +406,13 @@ h5 {
 .interest {
   display: inline-block;
   text-align: center;
-  width: 200px;
+  width: 180px;
   .no-padding;
+  @img-dim: 120px;
   img {
-    height: 170px;
-    width: 170px;
-    border-radius: 170px;
+    height: @img-dim;
+    width: @img-dim;
+    border-radius: @img-dim;
     margin-bottom: 1em;
   }
 }
@@ -446,6 +423,12 @@ h5 {
     display: inline-block;
     line-height: @edu-line-height;
     margin-bottom: 0;
+    a {
+      font-size: @p-size;
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
   }
 }
 #edu-seal {
@@ -454,11 +437,16 @@ h5 {
   margin-left: -(@about-side-space + 1em);
   height: @edu-line-height*2;
   width: @edu-line-height*2;
+  img {
+    height: 100%;
+    width: 100%;
+  }
 }
 /* ==========================================================================
    Content styles
    ========================================================================== */
 #work {
+  background-color: #DDD;
   padding: 2em 0;
   * {
     color: lighten(black, 15%);
@@ -466,19 +454,15 @@ h5 {
 }
 #work-content {
   .bottom;
-  // padding: 2em 1em;
   display: flex;
   justify-content: center;
   flex-flow: wrap;
-  // @media (min-width: @screen-md-min) {
-  //   padding: 2em 10em;
-  // }
 }
 .item-block {
   padding: 0.5em;
   display: inline-flex;
-  // width: 450px;
   flex-direction: column;
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,0.22));
   @media (max-width: @screen-sm-min) {
     width: 100%;
   }
@@ -522,7 +506,7 @@ h5 {
 .item-img-container {
   position: relative;
   height: @item-img-height;
-  background: @tertiary-color;
+  background: @blue-grey-700;
   text-align: center;
   .item-img {
     background-size: cover;
@@ -575,7 +559,7 @@ h5 {
   padding: 3em 2em;
   .flex-center-all;
   flex-direction: column;
-  background-color: desaturate(@red-500, 20%);
+  background-color: desaturate(@red-900, 10%);
 }
 #contact-text {
   margin: 2em;
@@ -606,17 +590,16 @@ h5 {
     width: 50px;
     border-radius: 50px;
     background: white;
-    filter: grayscale(100%);
+    filter:grayscale(100%);
     transition: all 0.1s;
     &:hover {
-      // background: black;
-      filter: grayscale(0%) saturate(70%);
+      filter:grayscale(0%) saturate(70%);
     }
   }
   img {
     height: 50px;
     width: 50px;
-    padding: 0.8em;
+    padding: 1em;
   }
 }
 /* ==========================================================================

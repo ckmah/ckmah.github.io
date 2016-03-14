@@ -3,7 +3,7 @@ extends ../layouts/default
 include ../mixins/mixins
 
 block title
-  title Static Website
+  title Clarence Mah - Portfolio
 
 console.log(blockData)
 block body
@@ -16,34 +16,32 @@ block body
         span.icon-bar
         span.icon-bar
         span.icon-bar
-
     div(class="collapse navbar-collapse" id="collapse-div")
       ul#nav(class="nav navbar-nav")
         li.active: a(href="#home") Home
         li: a(href="#about") About
         li: a(href="#work") Work
         li: a(href="#contact") Contact
-
-    //- a#email.icon(href="mailto:clarence.k.mah@gmail.com"): img(src="img/email-logo.png", alt="")
-    //- a#linkedin.icon(href="http://linkedin.com/in/clarencemah" target="_blank"): img(src="img/linkedin-logo.png", alt="")
-    //- a#github.icon(href="http://github.com/ckmah" target="_blank"): img(src="img/github-logo.png", alt="")
-    //- a#resume(href="resume.pdf" target="_blank") Resume
-    //- a(href="#home")
-    //- a(href="#about")
-    //- a(href="#work")
-    //- a(href="#contact")
-    //- div.container
   div#home
     div#home-row
       div#logo-box(class=""): img#logo(src="img/face.jpg", alt="Clarence Mah")
       div#home-text(class="")
         h1#name Clarence Mah
         div#tagline= content.tagline
-    a.glyphicon.glyphicon-chevron-down#learn-more(href="#about")
+    div#learn-more
+      a(href="#about") &darr;
   #about
     div.container
       h2 About
       div#about-text= content.about
+      h3 Education
+      div#edu-content
+        a#edu-seal(href="http://ucsd.edu" target="_blank"): img(src="img/ucsd_seal.png")
+        p: a(href="http://ucsd.edu" target="_blank") University of California, San Diego
+        p.right 2012 - 2016
+        br
+        p Bioengineering: Bioinformatics, B.S.
+        p.right La Jolla, CA
       div#interests.row
         h3 Current Interests
         div#interest-list.row
@@ -51,15 +49,6 @@ block body
             div.interest
               img(src="#{link}", alt="#{topic}")
               h4= topic
-      div
-        h3 Education
-        div#edu-content
-          img#edu-seal(src="img/ucsd_seal.png")
-          p University of California, San Diego
-          p.right 2012 - 2016
-          br
-          p Bioengineering: Bioinformatics, B.S.
-          p.right La Jolla, CA
   div#work
     div.container
       h2 Portfolio

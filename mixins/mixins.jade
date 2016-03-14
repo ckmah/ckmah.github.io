@@ -10,9 +10,8 @@ mixin carousel-item(index, blocks)
   //- div(class=klass)
   for block, index in blocks
     div.item-block.col-md-6.col-lg-4
-      //- if index % 2 == 1
-      //-   +item-img(block.image)
-      +item-img(block.image)
+      div.item-img-container
+        img.item-img(style="background-image: url(#{block.image})")
       div.item-info
         h3= block.title
         div#tags
@@ -22,9 +21,3 @@ mixin carousel-item(index, blocks)
         a.see-more(href="#{block.link}" target="_blank")
           div.see-more-text See More
           div.arrow-box: div#see-more-arrow(class="glyphicon glyphicon-chevron-right")
-        //- if index % 2 == 0
-        //-   +item-img(block.image)
-
-mixin item-img(image)
-  div.item-img-container
-    img.item-img(style="background-image: url(#{image})")

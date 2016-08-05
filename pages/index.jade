@@ -18,40 +18,46 @@ block body
         span.icon-bar
     div(class="collapse navbar-collapse" id="collapse-div")
       ul#nav(class="nav navbar-nav")
-        li.active: a(href="#home") Home
-        li: a(href="#about") About
-        li: a(href="#work") Work
-        li: a(href="#contact") Contact
-  div#home
+        li.active: a(href="#home")
+          h3 Home
+        li: a(href="#about") 
+          h3 About
+        li: a(href="#work")
+          h3 Work
+        li: a(href="#contact")
+          h3 Contact
+  .section#home
     div#home-row
       div#logo-box(class=""): img#logo(src="img/face.jpg", alt="Clarence Mah")
       div#home-text(class="")
-        h1#name Clarence Mah
+        h1#name Clarence Mah.
         div#tagline= content.tagline
     div#learn-more
       a(href="#about") &darr;
-  #about
+  .section#about
     div.container
-      h2 About
-      div#about-text= content.about
-      h3 Education
-      div#edu-content
-        a#edu-seal(href="http://ucsd.edu" target="_blank"): img(src="img/ucsd_seal.png")
-        p: a(href="http://ucsd.edu" target="_blank") University of California, San Diego
-        p.right 2012 - 2016
-        br
-        p Bioengineering: Bioinformatics, B.S.
-        p.right La Jolla, CA
+      h2 Who is he?
+      p#about-text= content.about
+      //- h3 Education
+      //- div#edu-content
+      //-   a#edu-seal(href="http://ucsd.edu" target="_blank"): img(src="img/ucsd_seal.png")
+      //-   //- <div>Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+      //-   p: a(href="http://ucsd.edu" target="_blank") University of California, San Diego
+      //-   p.right 2012 - 2016
+      //-   br
+      //-   p Bioengineering: Bioinformatics, B.S.
+      //-   p.right La Jolla, CA
+
+  .section#work
+    div.container
+      //- h2 Portfolio
       div#interests.row
-        h3 Current Interests
+        h2 Interests / Activites
         div#interest-list.row
           each link, topic in content.interests
             div.interest
-              img(src="#{link}", alt="#{topic}")
               h4= topic
-  div#work
-    div.container
-      h2 Portfolio
+              //- img(src="#{link}", alt="#{topic}")
       div#work-content
         - var data = content.elements
         each section, index in data

@@ -10,14 +10,20 @@
 @blue-grey-300: #90A4AE;
 @red-500: #d32f2f;
 @red-900: #b71c1c;
+@grey-100: #FAFAFA;
+@grey-200: #EEEEEE;
+@grey-300: #E0E0E0;
+@grey-500: #9E9E9E;
+@grey-700: #616161;
+@grey-800: #424242;
 @grey-900: #212121;
 @text-dark: lighten(black, 15%);
-@text-light: darken(white, 10%);
+@text-light: @grey-100;
 /* ==========================================================================
    Base styles
    ========================================================================== */
-html,
-body {
+body,
+html {
   padding: 0;
   position: relative;
 }
@@ -44,35 +50,30 @@ body {
    Font styling
    ========================================================================== */
 @font-face {
-  font-family: 'deja-vu-sans-mono';
-  src: url('../fonts/DejaVuSans-Mono.ttf');
+  font-family: 'Heading';
+  src: url('../fonts/Lato 900.ttf');
 }
 @font-face {
-  font-family: 'titillium';
-  src: url('../fonts/Titillium-Regular.otf');
+  font-family: 'Monospace';
+  src: url('../fonts/Roboto Mono regular.ttf');
 }
 @font-face {
-  font-family: 'raleway';
-  src: url('../fonts/Raleway-Regular.ttf');
-}
-@font-face {
-  font-family: 'monospace';
-  src: url('../fonts/Consolas.ttf');
+  font-family: 'Text';
+  src: url('../fonts/Lato regular.ttf');
 }
 @golden-ratio: 1.61803399;
 @h1-size: 74px;
 @h1-size-small: 56px;
 @h2-size: 40px;
-@h3-size: 18px;
+@h3-size: 27px; // 27.5833
 @h4-size: 16px;
 @h5-size: 12px;
-@p-size: 18px;
+@p-size: 16px;
 * {
-  font-family: 'titillium', Arial, "Lucida Grande", sans-serif;
+  font-family: 'Text', Arial, "Lucida Grande", sans-serif;
   line-height: @golden-ratio;
-  // -webkit-font-smoothing: antialiased !important;
-  font-size: 16px;
-  color: darken(white, 10%);
+  font-size: @p-size;
+  color: @text-dark;
 }
 a {
   text-decoration: none !important;
@@ -80,23 +81,21 @@ a {
 }
 p {
   font-size: @p-size;
+  letter-spacing: 0.02em;
 }
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: 'raleway', Arial, "Lucida Grande", sans-serif;
+  font-family: 'Heading', Arial, "Lucida Grande", sans-serif;
   padding: 0.3em 0;
   margin: 0;
   line-height: 1.3;
-  text-transform: uppercase;
-  // .raised-text;
-  // -webkit-text-stroke: 0.1px;
-  // font-weight: 400;
 }
 h1 {
   font-size: @h1-size-small;
+  // letter-spacing: -0.05em;
   .raised-text;
   @media only screen and (min-width: @screen-md-min) {
     font-size: @h1-size;
@@ -106,12 +105,13 @@ h2 {
   font-size: @h2-size;
   .raised-text;
   text-align: center;
-  margin: 0 0 1em;
+  // margin: 0 0 1em;
 }
 h3 {
+  font-family: 'Text';
   font-size: @h3-size;
-  // text-shadow: 0 0 0px black;
-  font-weight: bolder;
+  padding: 0;
+  line-height: normal;
   margin-right: 0.1em;
 }
 h4 {
@@ -144,7 +144,7 @@ h5 {
   border-radius: 3px;
 }
 .raised-text {
-  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 .raised-box {
   box-shadow: 1px 1px 3px rgba(0,0,0,0.22), 1px 1px 2px rgba(0,0,0,0.34);
@@ -172,6 +172,10 @@ h5 {
 /* ==========================================================================
    Element styles
    ========================================================================== */
+@home-bg: @grey-100;
+@about-bg: @grey-100;
+@work-bg: @grey-100;
+@contact-bg: desaturate(@red-900, 10%);
 #particles-js {
   position: absolute;
   width: 100%;
@@ -188,31 +192,42 @@ h5 {
   top: 0;
   transition: all 0.3s ease;
   a {
-    color: @text-light;
+    color: @text-dark;
+  }
+}
+#collapse-div {
+  @media only screen and (min-width: @screen-sm-min) {
+    .flex-center-all !important;
+    padding: 0.5em 0;
   }
 }
 .scrolled-nav {
-  background-color: rgba(255,255,255,0.95) !important;
-  a {
-    color: @red-500 !important;
-  }
+  background-color: @home-bg !important;
+  border-bottom: @grey-300 solid 1px;
 }
 #nav {
-  .flex-center-all;
   @media only screen and (min-width: @screen-sm-min) {
-    float: right;
+    align-self: center;
   }
   li {
     display: inline-block;
-    background: white;
-    @media only screen and (min-width: @screen-sm-min) {
+    a {
       background: transparent;
     }
+    h3 {
+      color: @grey-500;
+      transition: all 0.3s ease;
+      &:hover {
+        color: @text-dark;
+      }
+    }
   }
-  .active a {
-    background: transparent;
-    font-weight: 600;
+  .active a h3 {
+    color: @text-dark;
   }
+}
+.section {
+  padding: 3em 0;
 }
 #github:hover img {
   background: #222;
@@ -234,7 +249,7 @@ h5 {
   text-align: center;
   height: @page-height;
   min-height: @page-min-height;
-  background-color: @grey-900;
+  background-color: @grey-100;
   overflow: hidden;
   .flex-center-all;
   #home-row {
@@ -275,15 +290,11 @@ h5 {
   border-radius: 250px;
   overflow: hidden;
 }
-#name {
-  padding-bottom: 0.2em;
-}
 #home-text {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   #tagline {
-    display: inline-block;
-    padding-left: 0.2em;
-    font-family: 'deja-vu-sans-mono';
+    font-family: 'Monospace';
   }
 }
 /* ==========================================================================
@@ -295,7 +306,7 @@ h5 {
    tagline - type
  */
 @media only screen and (min-width: @screen-md-min) {
-  @fade-time: 0.8s;
+   @fade-time: 1s;
   @slide-time: 0.5s;
   @type-time: 3s;
   @slide-delay: @fade-time - 0.2s;
@@ -308,11 +319,14 @@ h5 {
   }
   #name {
     white-space: nowrap;
+    align-self: center;
+    padding-bottom: 0.2em;
+    margin: 0 0.65em;
   }
   #logo-box {
     display: inline-block;
     margin-left: 500px;
-    animation: fadeIn @fade-time ease-in-out, slideLeft @slide-time ease-in-out @slide-delay;
+    animation: fadeInGrow @fade-time ease-in-out, slideLeft @slide-time ease-in-out @slide-delay;
     animation-fill-mode: forwards;
   }
   #home-text {
@@ -323,6 +337,7 @@ h5 {
   }
   #tagline {
     .type-content(60);
+    align-self: flex-start;
   }
   #learn-more {
     opacity: 0;
@@ -339,6 +354,18 @@ h5 {
       opacity: 1;
     }
   }
+  @keyframes fadeInGrow {
+    from {
+      display: none;
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      display: inline-block;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
   @keyframes slideLeft {
     from {
       margin-left: 500px;
@@ -351,7 +378,7 @@ h5 {
     width: 0;
     overflow: hidden;
     white-space: nowrap;
-    border-right: @text-light 0.1em solid;
+    border-right: @text-dark 0.1em solid;
     animation: type @type-time steps(@numCh) @type-delay, blink-caret 1s linear infinite @caret-delay;
     animation-fill-mode: forwards;
     @keyframes type {
@@ -364,14 +391,14 @@ h5 {
     }
     @keyframes blink-caret {
       17% {
-        border-color: @text-light;
+        border-color: @text-dark;
       }
       33%,
       67% {
         border-color: transparent;
       }
       83% {
-        border-color: @text-light;
+        border-color: @text-dark;
       }
     }
   }
@@ -383,31 +410,40 @@ h5 {
 @edu-line-height: @p-size*@golden-ratio;
 #about {
   .bottom;
-  padding: 3em 0;
-  background-color: @blue-grey-500;
+  background-color: @about-bg;
   .container {
-    padding: 0 @about-side-space;
+    padding: 1.5em;
+    background: @grey-300;
   }
-  * {
-    color: white;
-  }
+  // * {
+  //   color: white;
+  // }
 }
 #about-text {
   margin: 0;
-  padding-bottom: 1em;
+  line-height: 1.7em;
 }
 #interests {
   padding: 1em 0;
 }
 #interest-list {
   margin-top: 1em;
-  text-align: center;
+  // text-align: center;
 }
 .interest {
   display: inline-block;
   text-align: center;
-  width: 180px;
-  .no-padding;
+  padding: 0.4em 1em;
+  margin: 0 0.5em;
+  border-radius: 2px;
+  background: @grey-300;
+  transition: all 0.1s ease;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    background: @grey-500;
+  }
   @img-dim: 120px;
   img {
     height: @img-dim;
@@ -446,8 +482,7 @@ h5 {
    Content styles
    ========================================================================== */
 #work {
-  background-color: #DDD;
-  padding: 2em 0;
+  background-color: @work-bg;
   * {
     color: lighten(black, 15%);
   }
@@ -472,7 +507,7 @@ h5 {
   height: auto;
   position: relative;
   white-space: normal;
-  padding: 1em 1em 5em;
+  padding: 1.0em;
   h3 {
     display: inline-block;
     padding-bottom: 0.5em;
@@ -485,22 +520,15 @@ h5 {
   margin: 0.5em 0;
 }
 .tag {
-  font-family: 'monospace';
+  font-family: 'Monospace';
   display: inline-block;
   margin-right: 0.5em;
-  padding: 0.5em 0.7em;
+  padding: 0.4em 1em;
   text-transform: uppercase;
-  background-color: white;
-  border-radius: 4px;
-  border: 1px solid @red-500;
-  color: @red-500 !important;
-  font-size: 12px;
-  &:hover {
-    background-color: @red-500;
-    @border: 1px solid white;
-    color: white !important;
-    cursor: pointer;
-  }
+  background-color: @grey-500;
+  border-radius: 2px;
+  color: white !important;
+  font-size: 13px;
 }
 @item-img-height: 300px;
 .item-img-container {
@@ -508,6 +536,7 @@ h5 {
   height: @item-img-height;
   background: @blue-grey-700;
   text-align: center;
+  overflow: hidden;
   .item-img {
     background-size: cover;
     height: 100%;
@@ -515,41 +544,28 @@ h5 {
   }
 }
 @see-more-neutral: white;
-@see-more-accent: @red-500;
+@see-more-accent: @grey-700;
+@see-more-active: @grey-900;
+@see-more-hover: @grey-500;
 .see-more {
-  position: absolute;
-  display: inline-block;
-  margin: 1.5em;
+  // position: absolute;
+  // display: inline-block;
+  float: right;
+  margin: 0.5em;
+  padding: 0.5em 0.7em;
   right: 0;
   bottom: 0;
-  vertical-align: middle;
+  text-align: center;
   background: @see-more-accent;
-  border: 1px solid @see-more-accent;
+  // border: 1px solid @see-more-accent;
   border-radius: 2px;
-  overflow: hidden;
-  & > * {
-    color: @see-more-neutral !important;
-    display: inline-block;
-    padding: 0.5em 0.7em;
-    transition: all 0.2s;
+  color: @see-more-neutral !important;
+  transition: all 0.2s;
+  &:hover {
+    background: @see-more-hover;
   }
-  .see-more-text {
-    background: @see-more-accent;
-  }
-  .arrow-box {
-    background: @see-more-neutral;
-  }
-  #see-more-arrow {
-    color: @see-more-accent !important;
-  }
-  &:hover .see-more-text {
-    width: auto;
-  }
-  &:hover .arrow-box {
-    background: @see-more-accent;
-    #see-more-arrow {
-      color: @see-more-neutral !important;
-    }
+  &:active {
+    background: @see-more-active;
   }
 }
 /* ==========================================================================
@@ -559,7 +575,7 @@ h5 {
   padding: 3em 2em;
   .flex-center-all;
   flex-direction: column;
-  background-color: desaturate(@red-900, 10%);
+  background-color: @contact-bg;
 }
 #contact-text {
   margin: 2em;

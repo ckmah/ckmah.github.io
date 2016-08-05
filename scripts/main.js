@@ -18,16 +18,44 @@
  */
 
 (function() {
-  'use strict';
-  $('a').smoothScroll();
-  $(window).scroll(function() {
-    var $navbar = $('#navbar');
-    if ($navbar.offset().top > $(window).height()) {
-      $navbar.addClass('scrolled-nav');
-    } else {
-      $navbar.removeClass('scrolled-nav');
-    }
-  });
+	'use strict';
+	$('a').smoothScroll({
+		offset: 1
+	});
+	$(window).scroll(function() {
+		var $navbar = $('#navbar');
+		var offset = $navbar.offset().top;
+		if (offset > $navbar.height()) {
+			$navbar.addClass('scrolled-nav');
+		} else {
+			$navbar.removeClass('scrolled-nav');
+		}
+
+		$('#nav li').removeClass('active');
+
+
+		// bottom to top order
+		// contact page
+		if (offset >= $('#contact').offset().top) {
+			console.log('contact');
+			$('#nav li a[href="#contact"]').parent().addClass('active');
+		}
+		// work page
+		else if (offset >= $('#work').offset().top) {
+			console.log('work');
+			$('#nav li a[href="#work"]').parent().addClass('active');
+		}
+		// about page
+		else if (offset >= $('#about').offset().top) {
+			console.log('about');
+			$('#nav li a[href="#about"]').parent().addClass('active');
+		}
+		// home page
+		else {
+			console.log('home');
+			$('#nav li a[href="#home"]').parent().addClass('active');
+		}
+	});
 })();
 
 // particlesJS.load('particles-js', '../particles.json', function() {

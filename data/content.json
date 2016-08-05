@@ -1,13 +1,14 @@
 {
   "tagline": "Aspiring bioinformatician, avid techie, and casual musician.",
-  "about": "As a soon to be college graduate, I am eager to begin my journey to leave my mark on the world. I wish to harness my curiosity for biology and data science to help realize a future in personalized medicine.",
+  "about": "Clarence is a recently graduate from UC San Diego with a B.S. in Bioengineering: Bioinformatics, and hopes to combine his passion for genomics and technology to pursue a career in bioinformatics. When he isn't sitting at the terminal watching jobs run, he enjoys playing violin with the local orchestra, swimming, catching up with news on the latest gadgets, and discovering local cafes with great coffee. He currently resides in sunny San Diego.",
   "interests": {
-    "Bioinformatics": "../img/circos-conde-nast-large.png",
-    "Machine Learning": "../img/plants-and-machines-ml.png",
-    "Web-Dev": "../img/aciano-net-web-dev.png",
-    "Android-Dev": "../img/google_android.png"
+    "#bioinformatics": "../img/circos-conde-nast-large.png",
+    "#machine-learning": "../img/plants-and-machines-ml.png",
+    "#web-dev": "../img/aciano-net-web-dev.png",
+    "#android-dev": "../img/google_android.png",
+    "leadership": "../img/google_android.png"
   },
-  "contact_text": "Want to chat? Send me an email and I'll get in touch.",
+  "contact_text": "Want to chat? Send Clarence an email and he'll get in touch.",
   "elements": [{
     "title": "Experience",
     "blocks": [{
@@ -20,7 +21,7 @@
     }, {
       "title": "Speech & Brain Machine Interfaces",
       "tags": ["matlab", "python", "linux"],
-      "description": "As an undergraduate researcher in the <a href=\"http://neuro.eng.ucsd.edu/\" target=\"_blank\">Translational NeuroEngineering Lab</a>, I worked on Brain Machine Interfaces (BMI) under Dr. Vikash Gilja. I assisted in creating a behavioral study to design an experimental framework to study correlations in speech and ECoG data. I also prototyped visual interfaces for those experiments, which were deployed in collaboration with UCSF to study patients in the Neurointensive Care Unit.",
+      "description": "As an undergraduate researcher in the Translational NeuroEngineering Lab, I worked on Brain Machine Interfaces (BMI) under Dr. Vikash Gilja. I assisted in creating a behavioral study to design an experimental framework to study correlations in speech and ECoG data. I also prototyped visual interfaces for those experiments, which were deployed in collaboration with UCSF to study patients in the Neurointensive Care Unit.",
       "link": "http://neuro.eng.ucsd.edu/",
       "thumbnail": "url(../img/brain_thumbnail.png)",
       "image": "../img/brain-neuro.png"
@@ -30,7 +31,7 @@
     "blocks": [{
       "title": "DangoReader",
       "tags": ["android", "java", "web-dev", "git"],
-      "description": "An Android application I created for readers to browse, read, and maintain a personal library of Japanese comics called Manga. I was the lead Android developer, responsible for designing the user interface and implementing models for interfacing JSON to a local database. I also developed a landing page for app distribution.",
+      "description": "An Android application for readers to browse, read, and maintain a personal library of Japanese comics called Manga. As the lead Android developer, I was responsible for designing the user interface and implementing models for interfacing JSON to a local database. I also developed a webpage for app distribution.",
       "link": "http://www.dangoreader.moe/",
       "thumbnail": "url(../img/phone_thumbnail.png)",
       "image": "../img/dango.png"
@@ -67,7 +68,7 @@
       "image": "../img/bmes_website.jpg"
     }, {
       "title": "NAE: Video Contest",
-      "tags": [],
+      "tags": ["leadership"],
       "description": "I led a team of students to create a video for the National Academy of Engineering's 50th Anniversary Video Contest ot promote innovations in engineering from the past, present, and future. We were the winners of the People's Choice Award for a prize of $5,000.",
       "link": "https://www.youtube.com/watch?v=9v1JmsR5tlM",
       "thumbnail": "url(../img/nae-video.jpg)",

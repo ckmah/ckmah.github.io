@@ -9,13 +9,13 @@ mixin carousel-item(index, blocks)
   //- - var klass = (index === 0 ? 'item active' : 'item')
   //- div(class=klass)
   for block, index in blocks
-    div.item-block.col-md-6
+    a.item-block(href="#{block.link}" target="_blank")
       //- div.item-img-container
       //-   img.item-img(style="background-image: url(#{block.image})")
       div.item-info
         h3= block.title
         p.item-text!= block.description
-        a.see-more(href="#{block.link}" target="_blank") More
+        //- a.see-more(href="#{block.link}" target="_blank") More
         div#tags
           for tag in block.tags
             div.tag= tag

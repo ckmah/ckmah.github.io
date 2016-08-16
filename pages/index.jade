@@ -19,18 +19,18 @@ block body
     div(class="collapse navbar-collapse" id="collapse-div")
       ul#nav(class="nav navbar-nav")
         li.active: a(href="#home")
-          h3 Home
+          h3.nav-text Home
         li: a(href="#about") 
-          h3 About
+          h3.nav-text About
         li: a(href="#work")
-          h3 Work
+          h3.nav-text Work
         li: a(href="#contact")
-          h3 Contact
+          h3.nav-text Contact
   .section#home
     div#home-row
       div#logo-box(class=""): img#logo(src="img/face.jpg", alt="Clarence Mah")
       div#home-text(class="")
-        h1#name Clarence Mah.
+        h1#name Clarence Mah
         div#tagline= content.tagline
     div#learn-more
       a(href="#about") &darr;
@@ -47,16 +47,16 @@ block body
       //-   br
       //-   p Bioengineering: Bioinformatics, B.S.
       //-   p.right La Jolla, CA
-
+  div#work-before
   .section#work
     div.container
       //- h2 Portfolio
       div#interests.row
-        h2 Interests / Activites
+        h2 Interests / Activities
         div#interest-list.row
           each link, topic in content.interests
-            div.interest
-              h4= topic
+            //- div.interest
+            div.tag= topic
               //- img(src="#{link}", alt="#{topic}")
       div#work-content
         - var data = content.elements

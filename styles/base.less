@@ -2,8 +2,12 @@
 /* ==========================================================================
    Color styles
    ========================================================================== */
-@primary-color: @red-500;
-@secondary-color: white;
+@primary-white: @grey-100;
+@primary-color: #7E8AA2;
+@secondary-color: #263248;
+@secondary-light-color: #374140;
+@secondary-dark-color: #1E1E20;
+@accent-color: #FF9800;
 @blue-grey-900: #263238;
 @blue-grey-700: #455a64;
 @blue-grey-500: #607D8B;
@@ -17,7 +21,8 @@
 @grey-700: #616161;
 @grey-800: #424242;
 @grey-900: #212121;
-@text-dark: lighten(black, 15%);
+@heading-dark: @secondary-color;
+@text-dark: rgba(51, 51, 51, 0.80);
 @text-light: @grey-100;
 /* ==========================================================================
    Base styles
@@ -26,6 +31,7 @@ body,
 html {
   padding: 0;
   position: relative;
+  background: @body-bg;
 }
 .container {
   .no-padding;
@@ -51,7 +57,11 @@ html {
    ========================================================================== */
 @font-face {
   font-family: 'Heading';
-  src: url('../fonts/Lato 900.ttf');
+  src: url('../fonts/Quicksand regular.ttf');
+}
+@font-face {
+  font-family: 'SubHeading';
+  src: url('../fonts/Quicksand regular.ttf');
 }
 @font-face {
   font-family: 'Monospace';
@@ -59,7 +69,7 @@ html {
 }
 @font-face {
   font-family: 'Text';
-  src: url('../fonts/Lato regular.ttf');
+  src: url('../fonts/OpenSans-Regular.ttf');
 }
 @golden-ratio: 1.61803399;
 @h1-size: 74px;
@@ -81,7 +91,6 @@ a {
 }
 p {
   font-size: @p-size;
-  letter-spacing: 0.02em;
 }
 h1,
 h2,
@@ -89,33 +98,40 @@ h3,
 h4,
 h5 {
   font-family: 'Heading', Arial, "Lucida Grande", sans-serif;
+  color: @heading-dark;
   padding: 0.3em 0;
   margin: 0;
   line-height: 1.3;
+  text-transform: uppercase;
 }
 h1 {
   font-size: @h1-size-small;
   // letter-spacing: -0.05em;
-  .raised-text;
+  // .raised-text;
   @media only screen and (min-width: @screen-md-min) {
     font-size: @h1-size;
   }
 }
 h2 {
   font-size: @h2-size;
-  .raised-text;
+  // .raised-text;
   text-align: center;
-  // margin: 0 0 1em;
+  padding-bottom: 0.8em;
+  letter-spacing: -2px;
+  font-weight: 600;
 }
 h3 {
-  font-family: 'Text';
+  font-family: 'SubHeading';
   font-size: @h3-size;
   padding: 0;
   line-height: normal;
   margin-right: 0.1em;
+  letter-spacing: -1px;
+  font-weight: 600;
 }
 h4 {
   font-size: @h4-size;
+  letter-spacing: -1px;
 }
 h5 {
   font-size: @h5-size;
@@ -140,42 +156,27 @@ h5 {
   margin: 0;
 }
 .card {
-  overflow: hidden;
   border-radius: 3px;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.22));
+  transition: all 0.2s ease;
 }
 .raised-text {
-  // text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-}
-.raised-box {
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.22), 1px 1px 2px rgba(0,0,0,0.34);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
 .card-z1 {
   .card;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.22), 0 1px 2px rgba(0,0,0,0.34);
-}
-.card-z2 {
-  .card;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.33) !important;
-}
-.card-z3 {
-  .card;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.29), 0 6px 6px rgba(0,0,0,0.33) !important;
-}
-.card-z4 {
-  .card;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.32) !important;
-}
-.card-z5 {
-  .card;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.4), 0 15px 12px rgba(0,0,0,0.32) !important;
+  &:hover {
+    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.33));
+  }
 }
 /* ==========================================================================
    Element styles
    ========================================================================== */
-@home-bg: @grey-100;
-@about-bg: @grey-100;
-@work-bg: @grey-100;
-@contact-bg: desaturate(@red-900, 10%);
+@body-bg: @primary-white;
+@home-bg: @primary-white;
+@about-bg: @primary-white;
+@work-bg: @primary-color;
+@contact-bg: @secondary-dark-color;
 #particles-js {
   position: absolute;
   width: 100%;
@@ -214,16 +215,17 @@ h5 {
     a {
       background: transparent;
     }
-    h3 {
-      color: @grey-500;
+    .nav-text {
+      // font-weight: 600;
+      color: @text-dark;
       transition: all 0.3s ease;
       &:hover {
-        color: @text-dark;
+        color: @accent-color;
       }
     }
   }
-  .active a h3 {
-    color: @text-dark;
+  .active a .nav-text {
+    color: @accent-color;
   }
 }
 .section {
@@ -236,13 +238,14 @@ h5 {
   background: #0077B5;
 }
 #email:hover img {
-  background: #c92c19;
+  // background: #c92c19;
 }
 /* ==========================================================================
    Home section styles
    ========================================================================== */
-@page-min-height: 500px;
+@page-min-height: 600px;
 @page-height: 100vh;
+@learn-more-b-margin: 2em;
 #home {
   .bottom;
   position: relative;
@@ -262,21 +265,21 @@ h5 {
     left: 0;
     right: 0;
     bottom: 0;
-    margin-bottom: 2em;
+    margin-bottom: @learn-more-b-margin;
     text-align: center;
     a {
+      .card-z1;
       display: inline-block;
       height: 2em;
       width: 2em;
       font-size: 24px;
-      color: @red-500;
+      color: @accent-color;
       background-color: white;
-      border-radius: 10em;
       line-height: 1.7em;
-      transition: all 0.2s;
+      border-radius: 10em;
       &:hover {
         color: white;
-        background-color: @red-500;
+        background-color: @accent-color;
       }
     }
   }
@@ -309,6 +312,7 @@ h5 {
    @fade-time: 1s;
   @slide-time: 0.5s;
   @type-time: 3s;
+  @ui-fade-time: 0.5s;
   @slide-delay: @fade-time - 0.2s;
   @name-delay: @slide-delay + @slide-time;
   @type-delay: @name-delay + @fade-time - 0.2s;
@@ -321,12 +325,12 @@ h5 {
     white-space: nowrap;
     align-self: center;
     padding-bottom: 0.2em;
-    margin: 0 0.65em;
+    margin: 0;
   }
   #logo-box {
     display: inline-block;
     margin-left: 500px;
-    animation: fadeInGrow @fade-time ease-in-out, slideLeft @slide-time ease-in-out @slide-delay;
+    animation: fadeIn @fade-time ease-in-out, slideLeft @slide-time ease-in-out @slide-delay;
     animation-fill-mode: forwards;
   }
   #home-text {
@@ -341,7 +345,12 @@ h5 {
   }
   #learn-more {
     opacity: 0;
-    animation: fadeIn @fade-time ease @caret-delay;
+    animation: fadeFallLearnMore @ui-fade-time ease-out @caret-delay;
+    animation-fill-mode: forwards;
+  }
+  #collapse-div {
+    opacity: 0;
+    animation: fadeFallNav @ui-fade-time ease-out @caret-delay;
     animation-fill-mode: forwards;
   }
   @keyframes fadeIn {
@@ -352,6 +361,32 @@ h5 {
     to {
       display: inline-block;
       opacity: 1;
+    }
+  }
+  @keyframes fadeFallLearnMore {
+    from {
+      display: none;
+      opacity: 0;
+      margin-bottom: @learn-more-b-margin - .2em;
+      transform: scale(1.5);
+    }
+    to {
+      display: inline-block;
+      opacity: 1;
+      margin-bottom: @learn-more-b-margin;
+      transform: scale(1);
+    }
+  }
+  @keyframes fadeFallNav {
+    from {
+      opacity: 0;
+      margin-top: -.5em;
+      transform: scale(1.1);
+    }
+    to {
+      opacity: 1;
+      margin-top: 0;
+      transform: scale(1);
     }
   }
   @keyframes fadeInGrow {
@@ -408,16 +443,16 @@ h5 {
    ========================================================================== */
 @about-side-space: 3.5em;
 @edu-line-height: @p-size*@golden-ratio;
+@overlap-margin: 10em;
 #about {
   .bottom;
   background-color: @about-bg;
   .container {
     padding: 1.5em;
-    background: @grey-300;
+    .card;
+    background: white;
+    margin-bottom: -@overlap-margin;
   }
-  // * {
-  //   color: white;
-  // }
 }
 #about-text {
   margin: 0;
@@ -428,21 +463,17 @@ h5 {
 }
 #interest-list {
   margin-top: 1em;
-  // text-align: center;
+  margin-left: 0.5em;
 }
-.interest {
+#interest-list .tag {
   display: inline-block;
   text-align: center;
-  padding: 0.4em 1em;
-  margin: 0 0.5em;
-  border-radius: 2px;
-  background: @grey-300;
-  transition: all 0.1s ease;
+  // padding: 0.4em 1em;
+  // margin: 0 0.5em;
+  transition: all 0.2s ease;
   &:hover {
     cursor: pointer;
-  }
-  &:active {
-    background: @grey-500;
+    background: @accent-color;
   }
   @img-dim: 120px;
   img {
@@ -481,25 +512,29 @@ h5 {
 /* ==========================================================================
    Content styles
    ========================================================================== */
+#work-before {
+  display: block;
+  padding-top: @overlap-margin;
+  background: @work-bg;
+}
 #work {
   background-color: @work-bg;
-  * {
-    color: lighten(black, 15%);
+  h2 {
+    color: @primary-white;
   }
 }
 #work-content {
   .bottom;
-  display: flex;
-  justify-content: center;
-  flex-flow: wrap;
+  @media (min-width: @screen-md-min) {
+    column-count: 2;
+    column-gap: 0;
+  }
 }
 .item-block {
   padding: 0.5em;
-  display: inline-flex;
-  flex-direction: column;
-  filter:drop-shadow(0 1px 1px rgba(0,0,0,0.22));
-  @media (max-width: @screen-sm-min) {
-    width: 100%;
+  @media (min-width: @screen-sm-min) {
+    display: block;
+    break-inside: avoid;
   }
 }
 .item-info {
@@ -508,12 +543,9 @@ h5 {
   position: relative;
   white-space: normal;
   padding: 1.0em;
+  .card-z1;
   h3 {
-    display: inline-block;
     padding-bottom: 0.5em;
-  }
-  .item-text {
-    display: inline-block;
   }
 }
 #tags {
@@ -523,12 +555,14 @@ h5 {
   font-family: 'Monospace';
   display: inline-block;
   margin-right: 0.5em;
+  margin-top: 0.5em;
   padding: 0.4em 1em;
   text-transform: uppercase;
-  background-color: @grey-500;
+  background-color: @secondary-color;
   border-radius: 2px;
   color: white !important;
   font-size: 13px;
+  letter-spacing: 0.5px;
 }
 @item-img-height: 300px;
 .item-img-container {
@@ -557,7 +591,6 @@ h5 {
   bottom: 0;
   text-align: center;
   background: @see-more-accent;
-  // border: 1px solid @see-more-accent;
   border-radius: 2px;
   color: @see-more-neutral !important;
   transition: all 0.2s;
@@ -588,8 +621,10 @@ h5 {
   vertical-align: middle;
   color: white;
   text-transform: uppercase;
-  transition: transform 0.1s;
+  transition: all 0.2s;
   &:hover {
+    border: 5px solid @accent-color;
+    color: @accent-color;
     transform: scale(1.05) translateY(-.1em);
   }
   &:active {
@@ -609,7 +644,7 @@ h5 {
     filter:grayscale(100%);
     transition: all 0.1s;
     &:hover {
-      filter:grayscale(0%) saturate(70%);
+      filter:grayscale(0%) saturate(100%);
     }
   }
   img {

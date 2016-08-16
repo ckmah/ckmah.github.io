@@ -2,25 +2,26 @@
   "tagline": "Aspiring bioinformatician, avid techie, and casual musician.",
   "about": "Clarence is a recently graduate from UC San Diego with a B.S. in Bioengineering: Bioinformatics, and hopes to combine his passion for genomics and technology to pursue a career in bioinformatics. When he isn't sitting at the terminal watching jobs run, he enjoys playing violin with the local orchestra, swimming, catching up with news on the latest gadgets, and discovering local cafes with great coffee. He currently resides in sunny San Diego.",
   "interests": {
-    "#bioinformatics": "../img/circos-conde-nast-large.png",
-    "#machine-learning": "../img/plants-and-machines-ml.png",
-    "#web-dev": "../img/aciano-net-web-dev.png",
-    "#android-dev": "../img/google_android.png",
-    "leadership": "../img/google_android.png"
+    "android-dev": "../img/google_android.png",
+    "bioinformatics": "../img/circos-conde-nast-large.png",
+    "leadership": "../img/google_android.png",
+    "machine-learning": "../img/plants-and-machines-ml.png",
+    "research": "",
+    "web-dev": "../img/aciano-net-web-dev.png"
   },
   "contact_text": "Want to chat? Send Clarence an email and he'll get in touch.",
   "elements": [{
     "title": "Experience",
     "blocks": [{
       "title": "Peroxisome Gene Regulation Analysis",
-      "tags": ["NGS", "scripting", "HPC clusters"],
-      "description": "I performed DNA motif enrichment anlaysis in collaboration with postdoctoral researchers using Next Generation Sequencing (NGS) bioinformatics tools. A subset of neuro-degenerative diseases are due to loss of or defective peroxisome function. The goal was to find a potential master regulatory controller of peroxisome genes. I also had the opportunity to research the CRISPR-Cas9 system and design guide RNAs for gene-knockout experiments.",
+      "tags": ["bioinformatics", "research"],
+      "description": "I performed DNA motif enrichment analysis in collaboration with postdoctoral researchers using Next Generation Sequencing (NGS) bioinformatics tools. A subset of neuro-degenerative diseases are due to loss of or defective peroxisome function. The goal was to find a potential master regulatory controller of peroxisome genes. I also had the opportunity to research the CRISPR-Cas9 system and design guide RNAs for gene-knockout experiments.",
       "link": "peroxisome-poster.pdf",
       "thumbnail": "url(../img/cell_thumbnail.png)",
       "image": "../img/peroxisome_poster.png"
     }, {
       "title": "Speech & Brain Machine Interfaces",
-      "tags": ["matlab", "python", "linux"],
+      "tags": ["machine-learning", "research"],
       "description": "As an undergraduate researcher in the Translational NeuroEngineering Lab, I worked on Brain Machine Interfaces (BMI) under Dr. Vikash Gilja. I assisted in creating a behavioral study to design an experimental framework to study correlations in speech and ECoG data. I also prototyped visual interfaces for those experiments, which were deployed in collaboration with UCSF to study patients in the Neurointensive Care Unit.",
       "link": "http://neuro.eng.ucsd.edu/",
       "thumbnail": "url(../img/brain_thumbnail.png)",
@@ -30,14 +31,14 @@
     "title": "Projects",
     "blocks": [{
       "title": "DangoReader",
-      "tags": ["android", "java", "web-dev", "git"],
+      "tags": ["android-dev", "web-dev"],
       "description": "An Android application for readers to browse, read, and maintain a personal library of Japanese comics called Manga. As the lead Android developer, I was responsible for designing the user interface and implementing models for interfacing JSON to a local database. I also developed a webpage for app distribution.",
       "link": "http://www.dangoreader.moe/",
       "thumbnail": "url(../img/phone_thumbnail.png)",
       "image": "../img/dango.png"
     }, {
       "title": "Molecular Sequence Analysis",
-      "tags": ["bioinformatics", "python", "scripting"],
+      "tags": ["bioinformatics"],
       "description": "This was a course that applied both classic and novel computer science algorithms to molecular sequence analysis. Some of the core genomic algorithsm I learned and implemented include algorithms for sequence alignment, assembly, rearrangement, and variants. Some algorithms include Eulerian paths and cycles, Burrows-Wheeler transform, and soft K-means clustering, all scripted in Python.",
       "link": "http://rosalind.info/problems/list-view/?location=bioinformatics-textbook-track",
       "thumbnail": "url(../img/rosalind_thumbnail.png)",
@@ -47,21 +48,21 @@
     "title": "Leadership",
     "blocks": [{
       "title": "Project Team Lead: BMES",
-      "tags": ["event planning", "project management"],
+      "tags": ["leadership"],
       "description": "I was responsible for creating a research program for undergraduates and engineering project teams by providing resources such as advising, funding, recruitment, and lab space. I successfully generated 15 undergraduate research positions and sponsored 3 student teams to compete in national engineering competitions by recruiting research labs to sponsor undergraduate team projects.",
       "link": "",
       "thumbnail": "url(../img/project-team_thumbnail.jpg)",
       "image": "../img/project-team.jpg"
     }, {
       "title": "Internal Vice President: UBIC",
-      "tags": ["bioinformatics", "event planning"],
+      "tags": ["bioinformatics", "research"],
       "description": "As internal Vice President of the Undergraduate Bioinformatics Club (UBIC) at UC San Deigo, I coordinated a board of 8 officers to plan a wide variety of events, from workshops to panels to industry networking events. I planned with the club's future in mind by creating guides for event planning and establishing relationships with departments and related faculty.",
       "link": "http://ubic.ucsd.edu/",
       "thumbnail": "url(../img/ubic_thumbnail.png)",
       "image": "../img/ubic.jpg"
     }, {
       "title": "Webmaster: BMES",
-      "tags": ["html5", "css3", "javascript", "bootstrap"],
+      "tags": ["web-dev", "leadership"],
       "description": "I redesigned and maintain the website for the Biomedical Engineering Society at UC San Diego to facilitate better communication and accessibility for club members and prospective industry sponsors. Some tools used include Gulp, Bootstrap, Less, and jQuery.",
       "link": "http://bmes.ucsd.edu/",
       "thumbnail": "url(../img/bmes_thumbnail.png)",

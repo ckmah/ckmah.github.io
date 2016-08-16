@@ -19,11 +19,12 @@
 
 (function() {
 	'use strict';
+	var $navbar = $('#navbar');
+	var scrollOffset = $navbar.height();
 	$('a').smoothScroll({
-		offset: 1
+		offset: -scrollOffset + 1
 	});
 	$(window).scroll(function() {
-		var $navbar = $('#navbar');
 		var offset = $navbar.offset().top;
 		if (offset > $navbar.height()) {
 			$navbar.addClass('scrolled-nav');
@@ -31,28 +32,28 @@
 			$navbar.removeClass('scrolled-nav');
 		}
 
+		// reset
 		$('#nav li').removeClass('active');
-
 
 		// bottom to top order
 		// contact page
-		if (offset >= $('#contact').offset().top) {
-			console.log('contact');
+		if (offset >= $('#contact').offset().top - scrollOffset) {
+			// console.log('contact');
 			$('#nav li a[href="#contact"]').parent().addClass('active');
 		}
 		// work page
-		else if (offset >= $('#work').offset().top) {
-			console.log('work');
+		else if (offset >= $('#work').offset().top - scrollOffset) {
+			// console.log('work');
 			$('#nav li a[href="#work"]').parent().addClass('active');
 		}
 		// about page
-		else if (offset >= $('#about').offset().top) {
-			console.log('about');
+		else if (offset >= $('#about').offset().top - scrollOffset) {
+			// console.log('about');
 			$('#nav li a[href="#about"]').parent().addClass('active');
 		}
 		// home page
 		else {
-			console.log('home');
+			// console.log('home');
 			$('#nav li a[href="#home"]').parent().addClass('active');
 		}
 	});

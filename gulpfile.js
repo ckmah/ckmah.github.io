@@ -97,7 +97,7 @@ gulp.task('fonts', function() {
 
 // HTML pages + content data
 gulp.task('pages', function() {
-  src.pages = ['pages/**/*', 'layouts/**/*', 'partials/**/*'];
+  src.pages = ['pages/**/*.jade', 'layouts/**/*.jade', 'partials/**/*.jade'];
   src.data = 'data/**/*';
   return gulp.src(src.pages[0])
     .pipe($.if(/\.jade$/, $.jade({

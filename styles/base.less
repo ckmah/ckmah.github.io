@@ -102,7 +102,7 @@ h5 {
   padding: 0.3em 0;
   margin: 0;
   line-height: 1.3;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 }
 h1 {
   font-size: @h1-size-small;
@@ -184,10 +184,8 @@ h5 {
   overflow: hidden;
   filter:blur(1px) contrast(10) saturate(0.8);
 }
-// TODO: check mobile dropdown menu positioning
 #navbar {
   .middle;
-  background-color: transparent;
   border: none;
   width: 100%;
   top: 0;
@@ -200,6 +198,7 @@ h5 {
   @media only screen and (min-width: @screen-sm-min) {
     .flex-center-all !important;
     padding: 0.5em 0;
+    background-color: @primary-white;
   }
 }
 .scrolled-nav {
@@ -208,15 +207,16 @@ h5 {
 }
 #nav {
   @media only screen and (min-width: @screen-sm-min) {
-    align-self: center;
+    background: none;
   }
   li {
-    display: inline-block;
+    text-align: center;
+    align-self: center;
+    display: block;
     a {
       background: transparent;
     }
     .nav-text {
-      // font-weight: 600;
       color: @text-dark;
       transition: all 0.3s ease;
       &:hover {
@@ -309,7 +309,7 @@ h5 {
    tagline - type
  */
 @media only screen and (min-width: @screen-md-min) {
-   @fade-time: 1s;
+  @fade-time: 1s;
   @slide-time: 0.5s;
   @type-time: 3s;
   @ui-fade-time: 0.5s;
@@ -321,7 +321,7 @@ h5 {
     .flex-center-all;
     align-content: space-around;
   }
-  #name {
+  #title {
     white-space: nowrap;
     align-self: center;
     padding-bottom: 0.2em;

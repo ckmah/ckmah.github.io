@@ -1,6 +1,6 @@
 {
   "tagline": "Aspiring bioinformatician, avid techie, and casual musician.",
-  "about": "Clarence recently graduated from UC San Diego with a B.S. in Bioengineering: Bioinformatics, and hopes to combine his passion for genomics and technology to pursue a career in bioinformatics. When he isn't staring at endless streams of ACTG's, he enjoys playing violin with the local orchestra, swimming, catching up on news about the latest tech gadgets, and discovering local cafes with great coffee. He currently resides in sunny San Diego, California.",
+  "about": "My name is Clarence Mah and I am a computational researcher studying cancer genomics at the School of Medicine at UC San Diego. I graduated UC San Diego with a B.S. in Bioinformatics in 2016. I enjoy playing violin with the local orchestra, traveling, and applying minimalism to my daily life. I currently live in sunny San Diego, California.",
   "interests": {
     "android-dev": "../img/google_android.png",
     "bioinformatics": "../img/circos-conde-nast-large.png",
@@ -9,7 +9,7 @@
     "research": "",
     "web-dev": "../img/aciano-net-web-dev.png"
   },
-  "contact_text": "Want to chat? Send Clarence an email and he'll get in touch.",
+  "contact_text": "Want to chat? Send me an email and I'll be in touch.",
   "elements": [{
     "title": "Experience",
     "blocks": [{

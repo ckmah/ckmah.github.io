@@ -2,28 +2,17 @@
 /* ==========================================================================
    Color styles
    ========================================================================== */
-@primary-white: @grey-100;
-@primary-color: #7E8AA2;
-@secondary-color: #263248;
-@secondary-light-color: #374140;
-@secondary-dark-color: #1E1E20;
-@accent-color: #FF9800;
-@blue-grey-900: #263238;
-@blue-grey-700: #455a64;
-@blue-grey-500: #607D8B;
-@blue-grey-300: #90A4AE;
-@red-500: #d32f2f;
-@red-900: #b71c1c;
-@grey-100: #FAFAFA;
-@grey-200: #EEEEEE;
-@grey-300: #E0E0E0;
-@grey-500: #9E9E9E;
-@grey-700: #616161;
-@grey-800: #424242;
-@grey-900: #212121;
+@primary-color: #A9BCD0;
+@secondary-color: #373F51;
+@tertiary-color: #1B1B1E;
+
+@primary-white: #D8DBE2;
+@accent-color: #58A4B0;
+
+@heading-light: @primary-white;
 @heading-dark: @secondary-color;
-@text-dark: rgba(51, 51, 51, 0.80);
-@text-light: @grey-100;
+@text-light: @primary-white;
+@text-dark: #1B1B1E;
 /* ==========================================================================
    Base styles
    ========================================================================== */
@@ -33,22 +22,28 @@ html {
   position: relative;
   background: @body-bg;
 }
+
 .container {
   .no-padding;
   position: relative;
 }
+
 .right {
   float: right;
 }
+
 .left {
   float: left;
 }
+
 .top {
   z-index: 200;
 }
+
 .middle {
   z-index: 100;
 }
+
 .bottom {
   z-index: 1;
 }
@@ -79,31 +74,36 @@ html {
 @h4-size: 16px;
 @h5-size: 12px;
 @p-size: 16px;
+
 * {
   font-family: 'Text', Arial, "Lucida Grande", sans-serif;
   line-height: @golden-ratio;
   font-size: @p-size;
   color: @text-dark;
 }
+
 a {
   text-decoration: none !important;
   color: #add8e6;
 }
+
 p {
   font-size: @p-size;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5 {
   font-family: 'Heading', Arial, "Lucida Grande", sans-serif;
-  color: @heading-dark;
+  color: @heading-light;
   padding: 0.3em 0;
   margin: 0;
   line-height: 1.3;
   // text-transform: uppercase;
 }
+
 h1 {
   font-size: @h1-size-small;
   // letter-spacing: -0.05em;
@@ -112,6 +112,7 @@ h1 {
     font-size: @h1-size;
   }
 }
+
 h2 {
   font-size: @h2-size;
   // .raised-text;
@@ -120,6 +121,7 @@ h2 {
   letter-spacing: -2px;
   font-weight: 600;
 }
+
 h3 {
   font-family: 'SubHeading';
   font-size: @h3-size;
@@ -129,10 +131,12 @@ h3 {
   letter-spacing: -1px;
   font-weight: 600;
 }
+
 h4 {
   font-size: @h4-size;
   letter-spacing: -1px;
 }
+
 h5 {
   font-size: @h5-size;
 }
@@ -144,39 +148,47 @@ h5 {
   display: inline-block;
   vertical-align: middle;
 }
+
 .flex-center-all {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .no-padding {
   padding: 0;
 }
+
 .row {
   margin: 0;
 }
+
 .card {
   border-radius: 3px;
   filter: drop-shadow(0 1px 1px rgba(0,0,0,0.22));
   transition: all 0.2s ease;
 }
+
 .raised-text {
   text-shadow: 0 1px 3px rgba(0,0,0,0.7);
 }
+
 .card-z1 {
   .card;
+
   &:hover {
-    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.33));
+    filter: drop-shadow(0 5px 5px rgba(30,10,0,0.4));
   }
 }
 /* ==========================================================================
    Element styles
    ========================================================================== */
 @body-bg: @primary-white;
-@home-bg: @primary-white;
-@about-bg: @primary-white;
+@home-bg: @secondary-color;
+@about-bg: @secondary-color;
 @work-bg: @primary-color;
-@contact-bg: @secondary-dark-color;
+@contact-bg: @secondary-color;
+
 #particles-js {
   position: absolute;
   width: 100%;
@@ -184,61 +196,82 @@ h5 {
   overflow: hidden;
   filter:blur(1px) contrast(10) saturate(0.8);
 }
-#navbar {
-  .middle;
-  border: none;
-  width: 100%;
-  top: 0;
-  transition: all 0.3s ease;
-  a {
-    color: @text-dark;
-  }
-}
-#collapse-div {
-  @media only screen and (min-width: @screen-sm-min) {
-    .flex-center-all !important;
-    padding: 0.5em 0;
-    background-color: @primary-white;
-  }
-}
-.scrolled-nav {
-  background-color: @home-bg !important;
-  border-bottom: @grey-300 solid 1px;
-}
-#nav {
-  @media only screen and (min-width: @screen-sm-min) {
-    background: none;
-  }
-  li {
-    text-align: center;
-    align-self: center;
-    display: block;
-    a {
-      background: transparent;
-    }
-    .nav-text {
-      color: @text-dark;
-      transition: all 0.3s ease;
-      &:hover {
-        color: @accent-color;
-      }
-    }
-  }
-  .active a .nav-text {
-    color: @accent-color;
-  }
-}
+
 .section {
   padding: 3em 0;
 }
+
 #github:hover img {
   background: #222;
 }
+
 #linkedin:hover img {
   background: #0077B5;
 }
+
 #email:hover img {
   // background: #c92c19;
+}
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+@media only screen and (min-width: @screen-sm-min) {
+  #nav {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    padding-right: 1em;
+    justify-content: flex-end;
+    transition: background-color .05s linear;
+    li {
+      a {
+        &:hover {
+          background-color: transparent;
+
+          h3 {
+            color: @accent-color;
+          }
+        }
+
+        &:focus {
+          background-color: transparent;
+        }
+      }
+
+      h3 {
+        color: @primary-white;
+        transition: color 0.1s linear;
+      }
+
+      &.active {
+        a {
+          background-color: transparent;
+        }
+
+        h3 {
+          color: @accent-color;
+        }
+      }
+    }
+  }
+
+  #nav.home {
+    background-color: @home-bg;
+  }
+
+  #nav.about {
+    background-color: @about-bg;
+  }
+
+  #nav.work {
+    background-color: @work-bg;
+  }
+
+  #nav.contact {
+    background-color: @contact-bg;
+  }
 }
 /* ==========================================================================
    Home section styles
@@ -246,19 +279,22 @@ h5 {
 @page-min-height: 600px;
 @page-height: 100vh;
 @learn-more-b-margin: 2em;
+
 #home {
   .bottom;
   position: relative;
   text-align: center;
   height: @page-height;
   min-height: @page-min-height;
-  background-color: @grey-100;
+  background-color: @home-bg;
   overflow: hidden;
   .flex-center-all;
+
   #home-row {
     width: 100%;
     text-align: center;
   }
+
   #learn-more {
     position: absolute;
     top: auto;
@@ -267,6 +303,7 @@ h5 {
     bottom: 0;
     margin-bottom: @learn-more-b-margin;
     text-align: center;
+
     a {
       .card-z1;
       display: inline-block;
@@ -277,6 +314,7 @@ h5 {
       background-color: white;
       line-height: 1.7em;
       border-radius: 10em;
+
       &:hover {
         color: white;
         background-color: @accent-color;
@@ -284,19 +322,24 @@ h5 {
     }
   }
 }
+
 #logo-box {
   text-align: center;
 }
+
 #logo {
   height: 250px;
   width: 250px;
   border-radius: 250px;
   overflow: hidden;
 }
+
 #home-text {
   display: flex;
   flex-direction: column;
+
   #tagline {
+    color: @primary-color;
     font-family: 'Monospace';
   }
 }
@@ -309,45 +352,52 @@ h5 {
    tagline - type
  */
 @media only screen and (min-width: @screen-md-min) {
-  @fade-time: 1s;
-  @slide-time: 0.5s;
+   @fade-time: 1s;
+  @slide-time: 1s;
   @type-time: 3s;
   @ui-fade-time: 0.5s;
   @slide-delay: @fade-time - 0.2s;
   @name-delay: @slide-delay + @slide-time;
   @type-delay: @name-delay + @fade-time - 0.2s;
   @caret-delay: @type-delay + @type-time;
+
   #home-row {
     .flex-center-all;
     align-content: space-around;
   }
+
   #title {
     white-space: nowrap;
     align-self: center;
     padding-bottom: 0.2em;
     margin: 0;
   }
+
   #logo-box {
     display: inline-block;
     margin-left: 500px;
-    animation: fadeIn @fade-time ease-in-out, slideLeft @slide-time ease-in-out @slide-delay;
+    animation: fadeFallLearnMore @fade-time ease-in-out, slideLeft @slide-time ease-in-out @slide-delay;
     animation-fill-mode: forwards;
   }
+
   #home-text {
     opacity: 0;
     padding: 0 4em;
     animation: fadeIn @fade-time ease @name-delay;
     animation-fill-mode: forwards;
   }
+
   #tagline {
     .type-content(60);
     align-self: flex-start;
   }
+
   #learn-more {
     opacity: 0;
     animation: fadeFallLearnMore @ui-fade-time ease-out @caret-delay;
     animation-fill-mode: forwards;
   }
+
   #collapse-div {
     opacity: 0;
     animation: fadeFallNav @ui-fade-time ease-out @caret-delay;
@@ -358,6 +408,7 @@ h5 {
       display: none;
       opacity: 0;
     }
+
     to {
       display: inline-block;
       opacity: 1;
@@ -370,6 +421,7 @@ h5 {
       margin-bottom: @learn-more-b-margin - .2em;
       transform: scale(1.5);
     }
+
     to {
       display: inline-block;
       opacity: 1;
@@ -383,6 +435,7 @@ h5 {
       margin-top: -.5em;
       transform: scale(1.1);
     }
+
     to {
       opacity: 1;
       margin-top: 0;
@@ -395,6 +448,7 @@ h5 {
       opacity: 0;
       transform: scale(0.5);
     }
+
     to {
       display: inline-block;
       opacity: 1;
@@ -405,10 +459,12 @@ h5 {
     from {
       margin-left: 500px;
     }
+
     to {
       margin-left: 0;
     }
   }
+
   .type-content(@numCh) {
     width: 0;
     overflow: hidden;
@@ -420,6 +476,7 @@ h5 {
       from {
         width: 0;
       }
+
       to {
         width: @numCh*1ch;
       }
@@ -428,10 +485,12 @@ h5 {
       17% {
         border-color: @text-dark;
       }
+
       33%,
       67% {
         border-color: transparent;
       }
+
       83% {
         border-color: @text-dark;
       }
@@ -444,38 +503,54 @@ h5 {
 @about-side-space: 3.5em;
 @edu-line-height: @p-size*@golden-ratio;
 @overlap-margin: 10em;
+
 #about {
   .bottom;
-  background-color: @about-bg;
+  background-color: @home-bg;
+
   .container {
     padding: 1.5em;
-    .card;
+    .card-z1;
     background: white;
     margin-bottom: -@overlap-margin;
+
+    h2 {
+      color: @heading-dark;
+    }
   }
 }
+
 #about-text {
   margin: 0;
   line-height: 1.7em;
 }
+
 #interests {
   padding: 1em 0;
+
+  h2 {
+    color: @heading-dark;
+  }
 }
+
 #interest-list {
   margin-top: 1em;
   margin-left: 0.5em;
 }
+
 #interest-list .tag {
   display: inline-block;
   text-align: center;
   // padding: 0.4em 1em;
   // margin: 0 0.5em;
   transition: all 0.2s ease;
+
   &:hover {
     cursor: pointer;
     background: @accent-color;
   }
   @img-dim: 120px;
+
   img {
     height: @img-dim;
     width: @img-dim;
@@ -483,32 +558,7 @@ h5 {
     margin-bottom: 1em;
   }
 }
-#edu-content {
-  padding: 1em 5em 0;
-  // position: relative;
-  p {
-    display: inline-block;
-    line-height: @edu-line-height;
-    margin-bottom: 0;
-    a {
-      font-size: @p-size;
-      &:hover {
-        text-decoration: underline !important;
-      }
-    }
-  }
-}
-#edu-seal {
-  font-size: @p-size;
-  position: absolute;
-  margin-left: -(@about-side-space + 1em);
-  height: @edu-line-height*2;
-  width: @edu-line-height*2;
-  img {
-    height: 100%;
-    width: 100%;
-  }
-}
+
 /* ==========================================================================
    Content styles
    ========================================================================== */
@@ -517,12 +567,11 @@ h5 {
   padding-top: @overlap-margin;
   background: @work-bg;
 }
+
 #work {
   background-color: @work-bg;
-  h2 {
-    color: @primary-white;
-  }
 }
+
 #work-content {
   .bottom;
   @media (min-width: @screen-md-min) {
@@ -530,6 +579,7 @@ h5 {
     column-gap: 0;
   }
 }
+
 .item-block {
   padding: 0.5em;
   @media (min-width: @screen-sm-min) {
@@ -537,6 +587,7 @@ h5 {
     break-inside: avoid;
   }
 }
+
 .item-info {
   background: white;
   height: auto;
@@ -544,13 +595,17 @@ h5 {
   white-space: normal;
   padding: 1.0em;
   .card-z1;
+
   h3 {
+    color: @heading-dark;
     padding-bottom: 0.5em;
   }
 }
+
 #tags {
   margin: 0.5em 0;
 }
+
 .tag {
   font-family: 'Monospace';
   display: inline-block;
@@ -564,43 +619,7 @@ h5 {
   font-size: 13px;
   letter-spacing: 0.5px;
 }
-@item-img-height: 300px;
-.item-img-container {
-  position: relative;
-  height: @item-img-height;
-  background: @blue-grey-700;
-  text-align: center;
-  overflow: hidden;
-  .item-img {
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-  }
-}
-@see-more-neutral: white;
-@see-more-accent: @grey-700;
-@see-more-active: @grey-900;
-@see-more-hover: @grey-500;
-.see-more {
-  // position: absolute;
-  // display: inline-block;
-  float: right;
-  margin: 0.5em;
-  padding: 0.5em 0.7em;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  background: @see-more-accent;
-  border-radius: 2px;
-  color: @see-more-neutral !important;
-  transition: all 0.2s;
-  &:hover {
-    background: @see-more-hover;
-  }
-  &:active {
-    background: @see-more-active;
-  }
-}
+
 /* ==========================================================================
    Contact section styles
    ========================================================================== */
@@ -610,10 +629,12 @@ h5 {
   flex-direction: column;
   background-color: @contact-bg;
 }
+
 #contact-text {
   margin: 2em;
   color: white;
 }
+
 #email-button {
   border: 5px solid white;
   text-align: center;
@@ -622,18 +643,22 @@ h5 {
   color: white;
   text-transform: uppercase;
   transition: all 0.2s;
+
   &:hover {
     border: 5px solid @accent-color;
     color: @accent-color;
     transform: scale(1.05) translateY(-.1em);
   }
+
   &:active {
     transform: scale(1.05) translateY(.1em);
   }
 }
+
 #links {
   padding: 3em;
   .flex-center-all;
+
   a {
     margin: 0.5em;
     overflow: hidden;
@@ -643,10 +668,12 @@ h5 {
     background: white;
     filter:grayscale(100%);
     transition: all 0.1s;
+
     &:hover {
       filter:grayscale(0%) saturate(100%);
     }
   }
+
   img {
     height: 50px;
     width: 50px;

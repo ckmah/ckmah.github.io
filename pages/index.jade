@@ -7,25 +7,34 @@ block title
 
 console.log(blockData)
 block body
+  ul#nav.nav.nav-pills
+    li.active(role="presentation"): a(href="#home")
+      h3.nav-text Home
+    li(role="presentation"): a(href="#about")
+      h3.nav-text About
+    li(role="presentation"): a(href="#work")
+      h3.nav-text Work
+    li(role="presentation"): a(href="#contact")
+      h3.nav-text Contact
   //- div#particles-js
-  nav#navbar(class="navbar navbar-default navbar-fixed-top")
-    div.navbar-header
-      button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-div" aria-expanded="false")
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-    div(class="collapse navbar-collapse" id="collapse-div")
-      ul#nav(class="nav navbar-nav")
-        li.active: a(href="#home")
-          h3.nav-text Home
-        li: a(href="#about") 
-          h3.nav-text About
-        li: a(href="#work")
-          h3.nav-text Work
-        li: a(href="#contact")
-          h3.nav-text Contact
+  //- nav#navbar(class="navbar navbar-default navbar-fixed-top")
+  //-   div.navbar-header
+  //-     button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-div" aria-expanded="false")
+  //-       span.sr-only Toggle navigation
+  //-       span.icon-bar
+  //-       span.icon-bar
+  //-       span.icon-bar
+  //-       span.icon-bar
+  //-   div(class="collapse navbar-collapse" id="collapse-div")
+  //-     ul#nav(class="nav navbar-nav")
+  //-       li.active: a(href="#home")
+  //-         h3.nav-text Home
+  //-       li: a(href="#about") 
+  //-         h3.nav-text About
+  //-       li: a(href="#work")
+  //-         h3.nav-text Work
+  //-       li: a(href="#contact")
+  //-         h3.nav-text Contact
   .section#home
     div#home-row
       div#logo-box(class=""): img#logo(src="img/face.jpg", alt="Clarence Mah")

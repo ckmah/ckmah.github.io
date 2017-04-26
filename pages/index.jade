@@ -16,25 +16,7 @@ block body
       h3.nav-text Work
     li(role="presentation"): a(href="#contact")
       h3.nav-text Contact
-  //- div#particles-js
-  //- nav#navbar(class="navbar navbar-default navbar-fixed-top")
-  //-   div.navbar-header
-  //-     button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-div" aria-expanded="false")
-  //-       span.sr-only Toggle navigation
-  //-       span.icon-bar
-  //-       span.icon-bar
-  //-       span.icon-bar
-  //-       span.icon-bar
-  //-   div(class="collapse navbar-collapse" id="collapse-div")
-  //-     ul#nav(class="nav navbar-nav")
-  //-       li.active: a(href="#home")
-  //-         h3.nav-text Home
-  //-       li: a(href="#about") 
-  //-         h3.nav-text About
-  //-       li: a(href="#work")
-  //-         h3.nav-text Work
-  //-       li: a(href="#contact")
-  //-         h3.nav-text Contact
+  span#nav-toggle.glyphicon.glyphicon-menu-hamburger(aria-hidden="true")
   .section#home
     div#home-row
       div#logo-box(class=""): img#logo(src="img/face.jpg", alt="Clarence Mah")
@@ -47,24 +29,13 @@ block body
     div.container
       h2 Who am I?
       p#about-text= content.about
-      //- h3 Education
-      //- div#edu-content
-      //-   a#edu-seal(href="http://ucsd.edu" target="_blank"): img(src="img/ucsd_seal.png")
-      //-   //- <div>Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-      //-   p: a(href="http://ucsd.edu" target="_blank") University of California, San Diego
-      //-   p.right 2012 - 2016
-      //-   br
-      //-   p Bioengineering: Bioinformatics, B.S.
-      //-   p.right La Jolla, CA
   div#work-before
   .section#work
     div.container
-      //- h2 Portfolio
       div#interests.row
         h2 Interests / Activities
         div#interest-list.row
           each link, topic in content.interests
-            //- div.interest
             div.tag= topic
               //- img(src="#{link}", alt="#{topic}")
       div#work-content
@@ -75,6 +46,6 @@ block body
     p#contact-text= content.contact_text
     a#email-button(href="mailto:clarence.k.mah@gmail.com") clarence.k.mah@gmail.com
     div#links
-      a(href="http://github.com/ckmah", target="_blank"): img(src="img/github-logo.png", alt="github")
-      a(href="http://linkedin.com/in/clarencemah", target="_blank"): img(src="img/linkedin-logo.png", alt="linkedin")
+      a(href="http://github.com/ckmah", target="_blank"): <span class='symbol'>circlegithub</span>
+      a(href="http://linkedin.com/in/clarencemah", target="_blank"): <span class='symbol'>circlelinkedin</span>
       //- a(href="http://", target="_blank") link

@@ -5,10 +5,8 @@
 @primary-color: #A9BCD0;
 @secondary-color: #373F51;
 @tertiary-color: #1B1B1E;
-
 @primary-white: #D8DBE2;
 @accent-color: #58A4B0;
-
 @heading-light: @primary-white;
 @heading-dark: @secondary-color;
 @text-light: @primary-white;
@@ -65,6 +63,33 @@ html {
 @font-face {
   font-family: 'Text';
   src: url('../fonts/OpenSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'Mono Social Icons Font';
+  src: url('../fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.symbol,
+a.symbol:before {
+  font-family: 'Mono Social Icons Font';
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+a.symbol:before {
+  content: attr(title);
+  margin-right: 0.3em;
+  font-size: 130%;
 }
 @golden-ratio: 1.61803399;
 @h1-size: 74px;
@@ -189,14 +214,6 @@ h5 {
 @work-bg: @primary-color;
 @contact-bg: @secondary-color;
 
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  filter:blur(1px) contrast(10) saturate(0.8);
-}
-
 .section {
   padding: 3em 0;
 }
@@ -215,6 +232,23 @@ h5 {
 /* ==========================================================================
    Navigation
    ========================================================================== */
+#nav-toggle {
+  @media only screen and (min-width: (@screen-sm-min + 1)) {
+    display: none;
+  }
+  .card-z1;
+  position: fixed;
+  z-index: 100;
+  right: 0;
+  top: 0;
+  color: @accent-color;
+  padding: 1em;
+  margin: 1em;
+  cursor: pointer;
+  border-radius: 10em;
+  background: white;
+}
+// For wider screens
 @media only screen and (min-width: @screen-sm-min) {
   #nav {
     z-index: 100;
@@ -224,7 +258,8 @@ h5 {
     display: flex;
     padding-right: 1em;
     justify-content: flex-end;
-    transition: background-color .05s linear;
+    transition: background-color 0.05s linear;
+
     li {
       a {
         &:hover {
@@ -257,20 +292,101 @@ h5 {
     }
   }
 
-  #nav.home {
+  &.home {
     background-color: @home-bg;
   }
 
-  #nav.about {
+  &.about {
     background-color: @about-bg;
   }
 
-  #nav.work {
+  &.work {
     background-color: @work-bg;
   }
 
-  #nav.contact {
+  &.contact {
     background-color: @contact-bg;
+  }
+}
+// For mobile width screens
+@media only screen and (max-width: @screen-sm-min) {
+  #nav.show-nav {
+    z-index: 100;
+    opacity: 1;
+
+    li {
+      opacity: 1;
+      transform: translate(0, 0) translate3d(0, 0, 0) scale(1);
+    }
+  }
+
+  #nav.hide-nav {
+    z-index: 100;
+    opacity: 0;
+  }
+
+  #nav {
+    z-index: -1;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    background: @tertiary-color;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+    li {
+      opacity: 0;
+      transform: translate(0, -10px) translate3d(0, -10px, 0) scale(1.2);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: @secondary-color;
+
+        h3 {
+          color: @accent-color;
+        }
+      }
+
+      &:active {
+        background-color: @primary-color;
+      }
+
+      a {
+        text-align: center;
+        padding: 3em;
+
+        &:focus,
+        &:hover {
+          background-color: transparent;
+        }
+      }
+
+      h3 {
+        color: @primary-white;
+        transition: color 0.1s linear;
+      }
+
+      &.active {
+        a {
+          background-color: transparent;
+        }
+
+        h3 {
+          color: @accent-color;
+        }
+      }
+    }
+    .generate-nav-items(4);
+
+    .generate-nav-items(@n, @i:1) when (@i =< @n) {
+      li:nth-child(@{i}) {
+        transition-delay: ((4 - @i) * 0.05s);
+      }
+      .generate-nav-items(@n, (@i + 1));
+    }
   }
 }
 /* ==========================================================================
@@ -469,7 +585,7 @@ h5 {
     width: 0;
     overflow: hidden;
     white-space: nowrap;
-    border-right: @text-dark 0.1em solid;
+    border-right: @text-light 0.1em solid;
     animation: type @type-time steps(@numCh) @type-delay, blink-caret 1s linear infinite @caret-delay;
     animation-fill-mode: forwards;
     @keyframes type {
@@ -483,7 +599,7 @@ h5 {
     }
     @keyframes blink-caret {
       17% {
-        border-color: @text-dark;
+        border-color: @text-light;
       }
 
       33%,
@@ -492,7 +608,7 @@ h5 {
       }
 
       83% {
-        border-color: @text-dark;
+        border-color: @text-light;
       }
     }
   }
@@ -501,7 +617,6 @@ h5 {
    About section styles
    ========================================================================== */
 @about-side-space: 3.5em;
-@edu-line-height: @p-size*@golden-ratio;
 @overlap-margin: 10em;
 
 #about {
@@ -558,7 +673,6 @@ h5 {
     margin-bottom: 1em;
   }
 }
-
 /* ==========================================================================
    Content styles
    ========================================================================== */
@@ -619,7 +733,6 @@ h5 {
   font-size: 13px;
   letter-spacing: 0.5px;
 }
-
 /* ==========================================================================
    Contact section styles
    ========================================================================== */
@@ -645,39 +758,35 @@ h5 {
   transition: all 0.2s;
 
   &:hover {
-    border: 5px solid @accent-color;
-    color: @accent-color;
-    transform: scale(1.05) translateY(-.1em);
+    // border: 5px solid saturate(@accent-color, 10%);
+    // color: saturate(@accent-color, 10%);
+    transform: scale(1.1) translateY(-.1em);
   }
 
   &:active {
-    transform: scale(1.05) translateY(.1em);
+    transform: scale(1.1) translateY(.1em);
   }
 }
 
 #links {
-  padding: 3em;
+  margin-top: 3em;
+  margin-bottom: 3em;
   .flex-center-all;
 
   a {
-    margin: 0.5em;
+    margin: 0 10px;
     overflow: hidden;
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
-    background: white;
-    filter:grayscale(100%);
     transition: all 0.1s;
 
     &:hover {
-      filter:grayscale(0%) saturate(100%);
+        transform: scale(1.2);
     }
   }
 
-  img {
-    height: 50px;
-    width: 50px;
-    padding: 1em;
+  span {
+    color: white;
+    font-size: 50px;
+    transition: all 0.1s ease-out;
   }
 }
 /* ==========================================================================

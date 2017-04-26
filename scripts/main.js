@@ -20,10 +20,11 @@
 (function() {
   'use strict';
   var $navbar = $('#nav');
-  var scrollOffset = $navbar.height();
+  var scrollOffset = '53';
   $('a').smoothScroll({
     offset: -scrollOffset + 1
   });
+
   $(window).scroll(function() {
     var offset = $navbar.offset().top;
     if (offset > $navbar.height()) {
@@ -60,6 +61,42 @@
       $('#nav').addClass('home');
       $('#nav li a[href="#home"]').parent().addClass('active');
     }
+  });
+
+  $(function() {
+    $('#nav-toggle').click(function() {
+
+      // Add transition class from shown to hidden
+      if ($navbar.hasClass('show-nav')) {
+        $navbar.removeClass('show-nav').addClass('hide-nav');
+        $('#nav-toggle').addClass('glyphicon-menu-hamburger');
+        $('#nav-toggle').removeClass('glyphicon-remove');
+
+        // Remove transition class after delay
+        setTimeout(function() {
+          $navbar.removeClass('hide-nav');
+        }, 500);
+
+      } else {
+        // Show nav
+        $navbar.removeClass('hide-nav').addClass('show-nav');
+        $('#nav-toggle').removeClass('glyphicon-menu-hamburger');
+        $('#nav-toggle').addClass('glyphicon-remove');
+      }
+
+      return false;
+    });
+  });
+
+  // Bind nav toggle click to esc key
+  $(document).keyup(function(e) {
+    if (e.keyCode == 27) {
+      $('#nav-toggle').click();
+    }
+  });
+
+  $('#nav li a').click(function() {
+    $('#nav-toggle').click();
   });
 })();
 
